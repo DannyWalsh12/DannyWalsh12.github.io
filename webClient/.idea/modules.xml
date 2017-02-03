@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../.idea/Trello 2.0.iml" filepath="$PROJECT_DIR$/../.idea/Trello 2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/webClient.iml" filepath="$PROJECT_DIR$/.idea/webClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webServices/.idea/webServices.iml" filepath="$PROJECT_DIR$/../webServices/.idea/webServices.iml" />
+    </modules>
+  </component>
+</project>
