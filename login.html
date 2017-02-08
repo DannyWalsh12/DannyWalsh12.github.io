@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    function login() {
+      var postData = {
+        "servicePath" : "/security/authenticate",
+        // Make sure you JSON encode (stringify) your request data. Web Service expects it (based on contract) to be encoded in JSON.
+        "serviceRequest" : JSON.stringify({
+          "secretPassword" : document.getElementById("password").value
+        })
+      };
+
+      // Debugging - Uncomment to check the data you are sending
+      console.log("Sending request: " + JSON.stringify(postData));
+
+      $.ajax({
+        url: "http://astralqueen.bw.edu/~bkrupp/webclient/services/service.php",
+        type: 'post',
+        data: postData,
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+          console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+        },
+        success: function(data) {
+          // Debugging - Uncomment to check data you received
+          console.log("Received response: " + data);
+
+          // Parse data into response object
+          var response = JSON.parse(data);
+
+          // Set auth status
+          document.getElementById("response").innerHTML = response.authenticationStatus;
+
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+<h3>Login to Notes!</h3>
+
+Enter the secret password!
+<input type="password" id="password"/>
+<button onclick="login()">Login</button>
+<div id="response">
+</div>
+
+</body>
+</html>

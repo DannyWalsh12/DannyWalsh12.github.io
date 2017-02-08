@@ -16,5 +16,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="Trello 2.0" />
     <orderEntry type="module" module-name="webServices" />
+    <orderEntry type="module" module-name="WebClient" />
+    <orderEntry type="module" module-name="Web programming" />
   </component>
 </module>

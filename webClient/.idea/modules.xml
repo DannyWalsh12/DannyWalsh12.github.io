@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../.idea/Trello 2.0.iml" filepath="$PROJECT_DIR$/../.idea/Trello 2.0.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/Web programming/.idea/Web programming.iml" filepath="$USER_HOME$/Documents/Web programming/.idea/Web programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../WebClient/.idea/WebClient.iml" filepath="$PROJECT_DIR$/../../WebClient/.idea/WebClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/webClient.iml" filepath="$PROJECT_DIR$/.idea/webClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/../webServices/.idea/webServices.iml" filepath="$PROJECT_DIR$/../webServices/.idea/webServices.iml" />
     </modules>
