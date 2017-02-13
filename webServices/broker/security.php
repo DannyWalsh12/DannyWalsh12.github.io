@@ -10,11 +10,14 @@ class securityBroker
     // Create default message
     $response["authenticationStatus"] = "You failed to login";
 
-    // Check for password
-    if ($request->secretPassword == "Notes!") {
-      $response["authenticationStatus"] = "You are logged in!";
+    //checks for username
+    if($request->username == "admin") {
+        // Check for password
+        if ($request->secretPassword == "password") {
+            $response["authenticationStatus"] = "username= ".$request->username."<br />password= ".$request->secretPassword;
+        }
     }
 
-    return $response;
+        return $response;
   }
 }

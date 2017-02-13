@@ -8,15 +8,17 @@
         "servicePath" : "/security/authenticate",
         // Make sure you JSON encode (stringify) your request data. Web Service expects it (based on contract) to be encoded in JSON.
         "serviceRequest" : JSON.stringify({
+          "username" : document.getElementById("username").value,
           "secretPassword" : document.getElementById("password").value
         })
       };
+
 
       // Debugging - Uncomment to check the data you are sending
       console.log("Sending request: " + JSON.stringify(postData));
 
       $.ajax({
-        url: "http://astralqueen.bw.edu/~abunge14/webServices/service.php",
+        url: "http://astralqueen.bw.edu/~dwalsh12/Trello 2.0/webServices/services.php",
         type: 'post',
         data: postData,
         error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -41,11 +43,16 @@
 
 <h3>Login to Notes!</h3>
 
+Enter your Username:
+<input type="text" id="username"/>
+<br />
 Enter the secret password!
 <input type="password" id="password"/>
 <button onclick="login()">Login</button>
 <div id="response">
 </div>
+<br />
+
 
 </body>
 </html>
