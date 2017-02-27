@@ -28,14 +28,13 @@ class securityBroker
   function createUser($request){
     $db = new db();
 
-    echo "the password is ". $request->Password;
+    if($db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email,$request->Verification)){
+        $response["createUser"] = "user account created";
+    }
+    else{
+        $response["createUser"] = "User failed to be created";
+    }
 
-    $response["createUser"] = "no User Created";
-
-    $db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email,$request->Verification);
-
-
-    $response["createUser"] = "User failed to be created";
     return $response;
   }
 
