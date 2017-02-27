@@ -52,8 +52,8 @@ class db {
     function createUserAccount($username,$password,$email,$verificationCode){
         $db = $this->getDbConnection();
 
-        if($sqlStatement = $db->prepare("INSERT INTO trello20.tblUser (username, password, email, verification, userId) VALUES (?, ?, ?, ?, NULL)")) {
-            $sqlStatement->bind_param("ssss", $username, $password, $email, $verificationCode);
+        if($sqlStatement = $db->prepare("INSERT INTO trello20.tblUser (username, password, email, verification, userId) VALUES ('test', 'somepassword', 'testemail@email.com', '123123', NULL)")) {
+            //$sqlStatement->bind_param("ssss", $username, $password, $email, $verificationCode);
         }
         else{
             printf("Errormessage: %s\n", $sqlStatement->error);
