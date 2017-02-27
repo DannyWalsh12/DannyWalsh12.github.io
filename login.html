@@ -90,6 +90,9 @@
                 // Debugging - Uncomment to check data you received
                 console.log("Received response: " + data);
 
+                var response = JSON.parse(data);
+
+                document.getElementById("CreateUserResponse").innerHTML = response.createUser;
 
             }
         });
@@ -126,6 +129,8 @@ Verification Code:
 <button onclick="createUser()">Create User</button>
 
 <br />
+<div id="CreateUserResponse">
+</div>
 <br />
 <br />
 <br />
