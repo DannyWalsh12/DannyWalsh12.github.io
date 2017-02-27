@@ -18,17 +18,17 @@
       <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webServices/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="51" column="65" lean-forward="true" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+            <state relative-caret-position="506">
+              <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
               <folding>
-                <marker date="1488226616160" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-                <marker date="1488226616160" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
-                <marker date="1488226616160" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
-                <marker date="1488226616160" expanded="true" signature="1861:1939" ph="SELECT noteI... tblNotes" />
-                <marker date="1488226616160" expanded="true" signature="2752:2820" ph="UPDATE tblNo... " />
-                <marker date="1488226616160" expanded="true" signature="3300:3337" ph="DELETE FROM " />
-                <marker date="1488226616160" expanded="true" signature="3816:3885" ph="INSERT INTO tblNotes... " />
-                <marker date="1488226616160" expanded="true" signature="4483:4552" ph="SELECT noteI... tblNotes" />
+                <marker date="1488226809122" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+                <marker date="1488226809122" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
+                <marker date="1488226809122" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
+                <marker date="1488226809122" expanded="true" signature="1899:1977" ph="SELECT noteI... tblNotes" />
+                <marker date="1488226809122" expanded="true" signature="2790:2858" ph="UPDATE tblNo... " />
+                <marker date="1488226809122" expanded="true" signature="3338:3375" ph="DELETE FROM " />
+                <marker date="1488226809122" expanded="true" signature="3854:3923" ph="INSERT INTO tblNotes... " />
+                <marker date="1488226809122" expanded="true" signature="4521:4590" ph="SELECT noteI... tblNotes" />
               </folding>
             </state>
           </provider>
@@ -222,12 +222,12 @@
       <updated>1488216640146</updated>
       <workItem from="1488216642042" duration="75000" />
       <workItem from="1488217239869" duration="4603000" />
-      <workItem from="1488225513192" duration="1115000" />
+      <workItem from="1488225513192" duration="1299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5793000" />
+    <option name="totallyTimeSpent" value="5977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -268,14 +268,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1488226616160" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1488226616160" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
-            <marker date="1488226616160" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
-            <marker date="1488226616160" expanded="true" signature="1861:1939" ph="SELECT noteI... tblNotes" />
-            <marker date="1488226616160" expanded="true" signature="2752:2820" ph="UPDATE tblNo... " />
-            <marker date="1488226616160" expanded="true" signature="3300:3337" ph="DELETE FROM " />
-            <marker date="1488226616160" expanded="true" signature="3816:3885" ph="INSERT INTO tblNotes... " />
-            <marker date="1488226616160" expanded="true" signature="4483:4552" ph="SELECT noteI... tblNotes" />
+            <marker date="1488226809122" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1488226809122" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
+            <marker date="1488226809122" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
+            <marker date="1488226809122" expanded="true" signature="1899:1977" ph="SELECT noteI... tblNotes" />
+            <marker date="1488226809122" expanded="true" signature="2790:2858" ph="UPDATE tblNo... " />
+            <marker date="1488226809122" expanded="true" signature="3338:3375" ph="DELETE FROM " />
+            <marker date="1488226809122" expanded="true" signature="3854:3923" ph="INSERT INTO tblNotes... " />
+            <marker date="1488226809122" expanded="true" signature="4521:4590" ph="SELECT noteI... tblNotes" />
           </folding>
         </state>
       </provider>
@@ -317,14 +317,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1488226616160" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1488226616160" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
-            <marker date="1488226616160" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
-            <marker date="1488226616160" expanded="true" signature="1861:1939" ph="SELECT noteI... tblNotes" />
-            <marker date="1488226616160" expanded="true" signature="2752:2820" ph="UPDATE tblNo... " />
-            <marker date="1488226616160" expanded="true" signature="3300:3337" ph="DELETE FROM " />
-            <marker date="1488226616160" expanded="true" signature="3816:3885" ph="INSERT INTO tblNotes... " />
-            <marker date="1488226616160" expanded="true" signature="4483:4552" ph="SELECT noteI... tblNotes" />
+            <marker date="1488226809122" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1488226809122" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
+            <marker date="1488226809122" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
+            <marker date="1488226809122" expanded="true" signature="1899:1977" ph="SELECT noteI... tblNotes" />
+            <marker date="1488226809122" expanded="true" signature="2790:2858" ph="UPDATE tblNo... " />
+            <marker date="1488226809122" expanded="true" signature="3338:3375" ph="DELETE FROM " />
+            <marker date="1488226809122" expanded="true" signature="3854:3923" ph="INSERT INTO tblNotes... " />
+            <marker date="1488226809122" expanded="true" signature="4521:4590" ph="SELECT noteI... tblNotes" />
           </folding>
         </state>
       </provider>
@@ -363,17 +363,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webServices/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="51" column="65" lean-forward="true" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+        <state relative-caret-position="506">
+          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
           <folding>
-            <marker date="1488226616160" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1488226616160" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
-            <marker date="1488226616160" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
-            <marker date="1488226616160" expanded="true" signature="1861:1939" ph="SELECT noteI... tblNotes" />
-            <marker date="1488226616160" expanded="true" signature="2752:2820" ph="UPDATE tblNo... " />
-            <marker date="1488226616160" expanded="true" signature="3300:3337" ph="DELETE FROM " />
-            <marker date="1488226616160" expanded="true" signature="3816:3885" ph="INSERT INTO tblNotes... " />
-            <marker date="1488226616160" expanded="true" signature="4483:4552" ph="SELECT noteI... tblNotes" />
+            <marker date="1488226809122" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1488226809122" expanded="true" signature="1373:1452" ph="INSERT INTO `tblUser`... " />
+            <marker date="1488226809122" expanded="true" signature="1373:1468" ph="INSERT INTO `tblUser`... " />
+            <marker date="1488226809122" expanded="true" signature="1899:1977" ph="SELECT noteI... tblNotes" />
+            <marker date="1488226809122" expanded="true" signature="2790:2858" ph="UPDATE tblNo... " />
+            <marker date="1488226809122" expanded="true" signature="3338:3375" ph="DELETE FROM " />
+            <marker date="1488226809122" expanded="true" signature="3854:3923" ph="INSERT INTO tblNotes... " />
+            <marker date="1488226809122" expanded="true" signature="4521:4590" ph="SELECT noteI... tblNotes" />
           </folding>
         </state>
       </provider>

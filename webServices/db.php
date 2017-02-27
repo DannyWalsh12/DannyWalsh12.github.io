@@ -54,6 +54,7 @@ class db {
 
         $sqlStatement = $db->prepare("INSERT INTO tblUser (username, password, email, verification, userId) VALUES (?, ?, ?, ?, NULL)");
         $sqlStatement->bind_param("sssi",$username,$password,$email,$verificationCode);
+        printf($sqlStatement->error);
 
         if($sqlStatement->execute() === FALSE){
             echo "issue creating account".$sqlStatement->error;
