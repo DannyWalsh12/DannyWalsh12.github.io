@@ -29,7 +29,7 @@ class securityBroker
     $db = new db();
 
     $response["createUser"] = "no User Created";
-
+    echo $request->Password;
     $db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email,$request->Verification);
 
     $response["createUser"] = "User failed to be created";

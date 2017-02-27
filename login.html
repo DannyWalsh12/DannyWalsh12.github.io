@@ -72,12 +72,12 @@
         var userData ={
             "servicePath": "/security/createUser",
             "serviceRequest" : JSON.stringify({
-            "username" : document.getElementById("createUsername").value,
-            "Password" : document.getElementById("createPassword").value,
-            "Email" : document.getElementById("createEmail").value,
-            "Verification" : document.getElementById("createVerification").value
+              "username" : document.getElementById("createUsername").value,
+              "Password" : document.getElementById("createPassword").value,
+              "Email" : document.getElementById("createEmail").value,
+              "Verification" : document.getElementById("createVerification").value
             })
-        }
+        };
 
         $.ajax({
             url: "http://astralqueen.bw.edu/~dwalsh12/Trello 2.0/webServices/services.php",
