@@ -52,8 +52,9 @@ class db {
     function createUserAccount($username,$password,$email,$verificationCode){
         $db = $this->getDbConnection();
 
-        if($sqlStatement = $db->prepare("INSERT INTO tblUser (username, password, email, verification, userId) VALUES (?, ?, ?, ?, ?)")) {
-            $sqlStatement->bind_param("ssssi", $username, $password, $email, $verificationCode, null);
+        if($sqlStatement = $db->prepare("INSERT INTO tblUser (username, password, email, verification, userId) VALUES (?, ?, ?, ?, NULL )")) {
+
+            $sqlStatement->bind_param("ssssi", $username, $password, $email, $verificationCode);
         }
         else{
             printf("Errormessage: %s\n", $sqlStatement->error);
