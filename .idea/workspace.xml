@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webServices/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="1078">
+              <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
               <folding>
                 <marker date="1488227991119" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
                 <marker date="1488227991119" expanded="true" signature="1373:1461" ph="INSERT INTO `tblUser`... " />
@@ -47,18 +47,18 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="939">
+            <state relative-caret-position="1203">
               <caret line="112" column="38" lean-forward="true" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="security.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="security.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webServices/broker/security.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="32" column="125" lean-forward="false" selection-start-line="32" selection-start-column="125" selection-end-line="32" selection-end-column="125" />
+            <state relative-caret-position="572">
+              <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -84,6 +84,7 @@
       <list>
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/webServices/db.php" />
+        <option value="$PROJECT_DIR$/webServices/broker/security.php" />
       </list>
     </option>
   </component>
@@ -222,12 +223,12 @@
       <updated>1488216640146</updated>
       <workItem from="1488216642042" duration="75000" />
       <workItem from="1488217239869" duration="4603000" />
-      <workItem from="1488225513192" duration="2480000" />
+      <workItem from="1488225513192" duration="2637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7158000" />
+    <option name="totallyTimeSpent" value="7315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -339,6 +340,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1203">
+          <caret line="112" column="38" lean-forward="true" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webServices/services.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -347,26 +356,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webServices/broker/security.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="32" column="125" lean-forward="false" selection-start-line="32" selection-start-column="125" selection-end-line="32" selection-end-column="125" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="112" column="38" lean-forward="true" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webServices/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="1078">
+          <caret line="61" column="9" lean-forward="true" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
           <folding>
             <marker date="1488227991119" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
             <marker date="1488227991119" expanded="true" signature="1373:1461" ph="INSERT INTO `tblUser`... " />
@@ -377,6 +370,14 @@
             <marker date="1488227991119" expanded="true" signature="3826:3895" ph="INSERT INTO tblNotes... " />
             <marker date="1488227991119" expanded="true" signature="4493:4562" ph="SELECT noteI... tblNotes" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/broker/security.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>

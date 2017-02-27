@@ -30,7 +30,7 @@ class securityBroker
 
     $response["createUser"] = "no User Created";
 
-    if($db->createUserAccount($request->username, $this->hashPass($request->password), $request->Email,$request->Verification)){
+    if($db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email,$request->Verification)){
         $response["createUser"] = "User Created";
         return $response;
     }
