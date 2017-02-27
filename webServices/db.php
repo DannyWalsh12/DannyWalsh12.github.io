@@ -53,7 +53,7 @@ class db {
         $db = $this->getDbConnection();
 
         $sqlStatement = $db->prepare("INSERT INTO 'tblUser' ('username','password','email','verification','userId') VALUES ?,?,?,?,NULL");
-        $sqlStatement->bind_param("ssss",$username,$password,$email,$verificationCode);
+        $sqlStatement->bind_param("sssi",$username,$password,$email,$verificationCode);
 
         if($sqlStatement->execute() === FALSE){
             echo "issue creating account".$sqlStatement->error;
