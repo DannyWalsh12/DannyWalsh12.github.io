@@ -38,7 +38,7 @@ class db {
         $sqlStatement->bind_result($userID);
         $sqlStatement->fetch();
 
-        $userID = 2;
+        $userID = $userID;
 
         if($userID > 0){
             return $userID;
