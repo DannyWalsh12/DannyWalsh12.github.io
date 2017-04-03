@@ -15,25 +15,117 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
-        <entry file="file://P:/www/testProject/trello-2.0/webServices/db.php">
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webServices/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+            <state relative-caret-position="588">
+              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
               <folding>
-                <marker date="1489762691030" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-                <marker date="1489762691030" expanded="true" signature="1381:1477" ph="INSERT INTO tblUser... " />
-                <marker date="1489762691030" expanded="true" signature="1877:1955" ph="SELECT noteI... tblNotes" />
-                <marker date="1489762691030" expanded="true" signature="2768:2836" ph="UPDATE tblNo... " />
-                <marker date="1489762691030" expanded="true" signature="3316:3353" ph="DELETE FROM " />
-                <marker date="1489762691030" expanded="true" signature="3832:3901" ph="INSERT INTO tblNotes... " />
-                <marker date="1489762691030" expanded="true" signature="4499:4568" ph="SELECT noteI... tblNotes" />
+                <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+                <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+                <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+                <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+                <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+                <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+                <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="90" />
+              <folding>
+                <element signature="e#2598#3780#0" expanded="false" />
+                <element signature="e#4033#4406#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserHomepage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UserHomepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notes-Improved.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Web programming/Notes-Improved.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrelloStart.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TrelloStart.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="12" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signUp.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/signUp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="session.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webServices/session.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webServices/services.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="response.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webServices/response.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,10 +133,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/webServices/broker/security.php" />
         <option value="$PROJECT_DIR$/webServices/db.php" />
         <option value="P:/www/testProject/trello-2.0/webServices/db.php" />
+        <option value="$PROJECT_DIR$/webServices/services.php" />
+        <option value="$PROJECT_DIR$/Start.html" />
+        <option value="$PROJECT_DIR$/TrelloStart.html" />
+        <option value="$PROJECT_DIR$/signUp.html" />
+        <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/UserHomepage.html" />
       </list>
     </option>
   </component>
@@ -76,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -84,11 +182,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testProject" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trello-2.0" />
+              <option name="myItemId" value="Trello 2.0" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -98,11 +192,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testProject" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trello-2.0" />
+              <option name="myItemId" value="Trello 2.0" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -110,16 +200,30 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trello 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trello 2.0" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webClient" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="P:/www/testProject" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
@@ -192,18 +296,24 @@
       <workItem from="1488216642042" duration="75000" />
       <workItem from="1488217239869" duration="4603000" />
       <workItem from="1488225513192" duration="6341000" />
-      <workItem from="1489760436975" duration="2258000" />
+      <workItem from="1489760436975" duration="2439000" />
+      <workItem from="1490407804817" duration="610000" />
+      <workItem from="1490411619147" duration="1145000" />
+      <workItem from="1490473466260" duration="2401000" />
+      <workItem from="1490486605332" duration="3242000" />
+      <workItem from="1490798807009" duration="78000" />
+      <workItem from="1491229485578" duration="68000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13277000" />
+    <option name="totallyTimeSpent" value="21002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13697916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -235,11 +345,237 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/webServices/response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="90" />
+          <folding>
+            <element signature="e#2598#3780#0" expanded="false" />
+            <element signature="e#4033#4406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserHomepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Web programming/Notes-Improved.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrelloStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2598#3780#0" expanded="false" />
+            <element signature="e#4033#4406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrelloStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1869">
           <caret line="89" column="51" lean-forward="false" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+          <folding>
+            <element signature="e#2598#3780#0" expanded="false" />
+            <element signature="e#4033#4406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="51" lean-forward="false" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -247,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="966">
           <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -255,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -264,13 +598,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1489761817413" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1489761817413" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
-            <marker date="1489761817413" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
-            <marker date="1489761817413" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
-            <marker date="1489761817413" expanded="true" signature="3314:3351" ph="DELETE FROM " />
-            <marker date="1489761817413" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
-            <marker date="1489761817413" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
           </folding>
         </state>
       </provider>
@@ -279,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -288,13 +621,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1489761817413" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1489761817413" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
-            <marker date="1489761817413" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
-            <marker date="1489761817413" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
-            <marker date="1489761817413" expanded="true" signature="3314:3351" ph="DELETE FROM " />
-            <marker date="1489761817413" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
-            <marker date="1489761817413" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
           </folding>
         </state>
       </provider>
@@ -303,7 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -311,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1672">
           <caret line="76" column="53" lean-forward="true" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -319,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="32" column="125" lean-forward="true" selection-start-line="32" selection-start-column="125" selection-end-line="32" selection-end-column="125" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -327,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -336,30 +665,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1489761817413" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1489761817413" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
-            <marker date="1489761817413" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
-            <marker date="1489761817413" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
-            <marker date="1489761817413" expanded="true" signature="3314:3351" ph="DELETE FROM " />
-            <marker date="1489761817413" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
-            <marker date="1489761817413" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webServices/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1869">
-          <caret line="89" column="51" lean-forward="false" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -367,23 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webServices/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding>
-            <marker date="1489761817413" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1489761817413" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
-            <marker date="1489761817413" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
-            <marker date="1489761817413" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
-            <marker date="1489761817413" expanded="true" signature="3314:3351" ph="DELETE FROM " />
-            <marker date="1489761817413" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
-            <marker date="1489761817413" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -391,22 +687,102 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://P:/www/testProject/trello-2.0/login.html" />
+    <entry file="file://P:/www/testProject/trello-2.0/webServices/services.php" />
+    <entry file="file://P:/www/testProject/trello-2.0/webServices/db.php" />
+    <entry file="file://$PROJECT_DIR$/webServices/service.php" />
+    <entry file="file://$PROJECT_DIR$/webServices/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://P:/www/testProject/trello-2.0/webServices/db.php">
+    <entry file="file://$PROJECT_DIR$/webServices/response.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webServices/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding>
-            <marker date="1489762691030" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
-            <marker date="1489762691030" expanded="true" signature="1381:1477" ph="INSERT INTO tblUser... " />
-            <marker date="1489762691030" expanded="true" signature="1877:1955" ph="SELECT noteI... tblNotes" />
-            <marker date="1489762691030" expanded="true" signature="2768:2836" ph="UPDATE tblNo... " />
-            <marker date="1489762691030" expanded="true" signature="3316:3353" ph="DELETE FROM " />
-            <marker date="1489762691030" expanded="true" signature="3832:3901" ph="INSERT INTO tblNotes... " />
-            <marker date="1489762691030" expanded="true" signature="4499:4568" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="759:819" ph="SELECT userI... tblUser" />
+            <marker date="1489762746140" expanded="true" signature="1379:1475" ph="INSERT INTO tblUser... " />
+            <marker date="1489762746140" expanded="true" signature="1875:1953" ph="SELECT noteI... tblNotes" />
+            <marker date="1489762746140" expanded="true" signature="2766:2834" ph="UPDATE tblNo... " />
+            <marker date="1489762746140" expanded="true" signature="3314:3351" ph="DELETE FROM " />
+            <marker date="1489762746140" expanded="true" signature="3830:3899" ph="INSERT INTO tblNotes... " />
+            <marker date="1489762746140" expanded="true" signature="4497:4566" ph="SELECT noteI... tblNotes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Start.html" />
+    <entry file="file://$PROJECT_DIR$/TrelloStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Web programming/Notes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Web programming/Notes-Improved.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="90" />
+          <folding>
+            <element signature="e#2598#3780#0" expanded="false" />
+            <element signature="e#4033#4406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserHomepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
