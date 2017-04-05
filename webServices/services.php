@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 /**
  * Created by PhpStorm.
@@ -7,9 +7,14 @@ session_start();
  * Date: 2/3/2017
  * Time: 10:38 AM
  */
+require_once ("session.php");
+
 // Pull in various service brokers
 require_once("broker/security.php");
 require_once ("broker/task.php");
+
+$session=new session();
+$session->startSession();
 
 /*
  * Step 1 - Extract Service Path and Process It

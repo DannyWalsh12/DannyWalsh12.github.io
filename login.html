@@ -36,6 +36,8 @@
 
         }
       });
+      // TODO: Redirect to user Homepage
+      // TODO: Move createTask() to another file (user Homepage)
     }
     function createTask() {
         var taskData ={
@@ -66,8 +68,9 @@
 
             }
         });
-    }
 
+    }
+/*
     function createUser() {
         var userData ={
             "servicePath": "/security/createUser",
@@ -97,7 +100,7 @@
             }
         });
 
-    }
+    }*/
   </script>
 </head>
 <body>
@@ -107,30 +110,13 @@
 Enter your Username:
 <input type="text" id="username"/>
 <br />
-Enter the secret password!
+Enter the password!
 <input type="password" id="password"/>
 <button onclick="login()">Login</button>
 <div id="response">
 </div>
 <br />
 
-<h3>Create an Account:</h3>
-Username:
-<input type="text" id="createUsername"/>
-<br />
-Password:
-<input type="password" id="createPassword" />
-<br />
-Email:
-<input type="text" id="createEmail" />
-<br />
-Verification Code:
-<input type="text" id="createVerification" />
-<button onclick="createUser()">Create User</button>
-
-<br />
-<div id="CreateUserResponse">
-</div>
 <br />
 <br />
 <br />
