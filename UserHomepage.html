@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,4 +21,72 @@
 </div>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<<<<<<< HEAD
+=======
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+>>>>>>> master
+    <style>
+
+    </style>
+
+<<<<<<< HEAD
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        function createTask() {
+            var taskData ={
+                "servicePath" : "/tasks/createTasks",
+                "serviceRequest" : JSON.stringify({
+                    "taskTitle" : document.getElementById("taskTitle").value
+                })
+            };
+
+            console.log("Sending create Tasks: " + JSON.stringify(taskData));
+
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: taskData,
+                error: function(XMLHttpRequest, textStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+                    // Debugging - Uncomment to check data you received
+                    console.log("Received response: " + data);
+
+                    // Parse data into response object
+                    var response = JSON.parse(data);
+
+                    // Set auth status
+                    document.getElementById("taskResponse").innerHTML = response.TaskResponse;
+
+                }
+            });
+
+        }
+    </script>
+
+
+=======
+    <script>
+
+
+
+    </script>
+>>>>>>> master
+    <meta charset="UTF-8">
+    <title>Welcome *User*</title>
+</head>
+<body>
+<div id="AllTasks" style="height: 75%; overflow-x: scroll";>
+
+</div>
+
+</body>
+>>>>>>> 6a9fdbfc676670cc19a7f3c2370addd31c043665
 </html>
