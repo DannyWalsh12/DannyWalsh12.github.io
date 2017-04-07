@@ -15,7 +15,7 @@ class securityBroker
 
     $userId = $db->authenticateUser($request->username, $this->hashPass($request->secretPassword));
 
-    $response["userId"]=-1;
+    $response["userId"]=-2;
 
     if($userId > 0){
         $response["userId"] = $userId;
