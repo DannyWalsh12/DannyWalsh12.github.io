@@ -5,9 +5,21 @@
  * Date: 2/13/2017
  * Time: 6:39 PM
  */
-class tasksBroker{
+require_once ("db.php");
+
+class taskBroker{
     function createTasks($request){
-        $response["TaskResponse"] = "TaskTitle= ".$request->taskTitle;
+        $db = new db();
+
+        if($db->createTask($request->taskTitle,$request->taskDescrip,$request->userId,$request->listId)){
+            $response["TaskResponse"] = "The task has been created";
+        }
+        else{
+            $response["TaskResponse"] = "Failed to create task";
+        }
+
         return $response;
+
+
     }
 }
