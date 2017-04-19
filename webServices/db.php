@@ -75,7 +75,6 @@ class db {
         $sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
 
         if($sqlStatement->execute() === FALSE){
-            console.log($sqlStatement->error);
             echo "issue with creating Tasks".$sqlStatement->error;
             return false;
         }
