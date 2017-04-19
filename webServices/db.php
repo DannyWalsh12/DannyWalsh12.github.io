@@ -70,14 +70,14 @@ class db {
     function createTask($taskTitle,$taskDescription,$userId,$listId){
         $db = $this->getDbConnection();
 
-        //$sqlStatement = $db->prepare("INSERT INTO tblTasks (TaskTitle, TaskDescrip, DateOfCreation, TaskId, userId, listId) VALUES (?,?,CURRENT_TIME() ,NULL, ?, ?)");
+        $query = "INSERT INTO tblTasks (TaskTitle, TaskDescrip, DateOfCreation, TaskId, userId, listId) VALUES (?,?,CURRENT_TIME() ,NULL, ?, ?)";
+        $sqlStatement = $db->prepare($query);
 
-        $sqlStatement = $db->prepare("INSERT INTO tblTasks VALUES ($taskTitle,$taskDescription,CURRENT_TIME() ,NULL, $userId, $listId)");
-        //$sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
+        $sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
 
         if($sqlStatement->execute() === FALSE){
-            echo "issue with creating Tasks".$sqlStatement->error;
-            return false;
+            return "issue with creating Tasks".$sqlStatement->error;
+
         }
         return true;
 
