@@ -72,7 +72,7 @@ class db {
 
         $sqlStatement = $db->prepare("INSERT INTO tblTasks (TaskTitle, TaskDescrip, DateOfCreation, TaskId, userId, listId) VALUES (?,?,CURRENT_DATE ,NULL, ?, ?)");
 
-        $sqlStatement->bind_param("ssii",$taskTitle,$taskDescription,$userId,$listId);
+        $sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
 
         if($sqlStatement->execute() === FALSE){
             console.log($sqlStatement->error);
