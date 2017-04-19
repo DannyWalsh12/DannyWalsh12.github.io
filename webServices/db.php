@@ -72,7 +72,7 @@ class db {
 
         //$sqlStatement = $db->prepare("INSERT INTO tblTasks (TaskTitle, TaskDescrip, DateOfCreation, TaskId, userId, listId) VALUES (?,?,CURRENT_TIME() ,NULL, ?, ?)");
 
-        $sqlStatement = $db->prepare("INSERT INTO tblTasks (TaskTitle, TaskDescrip, DateOfCreation, TaskId, userId, listId) VALUES ($taskTitle,$taskDescription,CURRENT_TIME() ,NULL, $userId, $listId)");
+        $sqlStatement = $db->prepare("INSERT INTO tblTasks VALUES ($taskTitle,$taskDescription,CURRENT_TIME() ,NULL, $userId, $listId)");
         //$sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
 
         if($sqlStatement->execute() === FALSE){
