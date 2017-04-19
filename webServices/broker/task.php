@@ -11,6 +11,7 @@ class taskBroker{
     function createTasks($request){
         $db = new db();
 
+        $response["TaskResponse"] = "Never entered loop";
         if($db->createTask($request->taskTitle,$request->taskDescrip,$request->userId,$request->listId)){
             $response["TaskResponse"] = "The task has been created";
         }
