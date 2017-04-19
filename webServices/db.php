@@ -73,7 +73,7 @@ class db {
     function createTask($taskTitle,$taskDescription,$userId,$listId){
         $db = $this->getDbConnection();
 
-        $query = "INSERT INTO `tblTasks` (`TaskTile`, `TaskDescrip`, `DateOfCreation`, `TaskId`, `userId`, `listId`) VALUES (?, ?, CURRENT_TIME(), NULL, ?, ?)";
+        $query = "INSERT INTO `tblTasks` (`TaskTitle`, `TaskDescrip`, `DateOfCreation`, `TaskId`, `userId`, `listId`) VALUES (?, ?, CURRENT_TIME(), NULL, ?, ?)";
         $sqlStatement = $db->prepare($query);
 
         $sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
@@ -83,6 +83,34 @@ class db {
 
         }
         return true;
+
+
+    }
+
+    function getTasks($userId,$listId){
+        $db = $this->getDbConnection();
+
+        $query = "SELECT TaskTitle, TaskDescrip, TaskId FROM tblTasks WHERE userId = ? AND listId = ?";
+        $sqlStatement = $db->prepare($query);
+        $sqlStatement->bind_param("ii", $userId,$listId);
+
+        $results = array();
+
+        if($sqlStatement->execute() === FALSE){
+            echo $sqlStatement->error;
+        }
+
+        $sqlStatement->bind_result($Title,$Descrip,$TaskId);
+
+        while($sqlStatement->fetch()){
+            $temp["taskTitle"] = $Title;
+            $temp["taskDescription"] = $Descrip;
+            $temp["taskId"] = $TaskId;
+
+            array_push($results, $temp);
+        }
+
+        return $results;
 
 
     }
@@ -151,36 +179,14 @@ class db {
         }
         return true;
     }
-    function createNote($noteTitle, $noteContents, $userId) {
+    function getNotes($userId,$listId) {
         $db = $this->getDbConnection();
 
         // Step 1 - Prepare a statement
-        $sqlStatement = $db->prepare("INSERT INTO tblNotes (noteTitle, noteContents, userId) VALUES (?,?,?)");
+        $sqlStatement = $db->prepare("SELECT noteId, noteTitle, noteContents FROM tblNotes WHERE userId = ? and listId = ?");
 
         // Step 2 - Bind parameters
-        /*
-         * s = string
-         * i = integer
-         * d = double or float
-         * b = blob
-         */
-        $sqlStatement->bind_param("ssi", $noteTitle, $noteContents, $userId);
-
-        // Step 3 - Execute
-        if ($sqlStatement->execute() === FALSE) {
-            echo "Issue executing SQL" . $sqlStatement->error();
-            return false;
-        }
-        return true;
-    }
-    function getNotes($userId) {
-        $db = $this->getDbConnection();
-
-        // Step 1 - Prepare a statement
-        $sqlStatement = $db->prepare("SELECT noteId, noteTitle, noteContents FROM tblNotes WHERE userId = ?");
-
-        // Step 2 - Bind parameters
-        $sqlStatement->bind_param("i", $userId);
+        $sqlStatement->bind_param("ii", $userId, $listId);
 
         $noteResults = array();
 

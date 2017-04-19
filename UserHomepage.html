@@ -3,7 +3,111 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
+        body {
+            font-family: Arial;
+        }
 
+        #notes {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .note {
+            padding: 5px;
+            flex: 1 auto;
+            min-width: 350px;
+            max-width: 350px;
+            margin: 30px;
+            height: 150px;
+            padding:15px;
+            color:#555555;
+            border:solid 1px #999999;
+            border-radius:5px;
+        }
+
+        button {
+            border-radius: 10px;
+            border: solid 0px #000000;
+            font-size: 18pt;
+            font-weight: lighter;
+            padding: 5px 10px 5px 10px;
+            background-color: #9999AA;
+            color: white;
+            outline: none;
+            box-shadow: 2px 2px 2px #DDDDDD;
+
+        }
+
+        button:hover {
+            background-color: #9999FF;
+        }
+
+        button:active {
+            background-color: #333377;
+            transform: translate(1px, 1px);
+        }
+
+        .deleteButton {
+            border-radius: 50%;
+            outline: none;
+            background-color: #AA5555;
+            float: right;
+            width: 20px;
+            height: 20px;
+            font-size: 12pt;
+            font-family: arial;
+            font-weight: normal;
+            box-shadow: 0px;
+            padding: 0px;
+        }
+
+        .deleteButton:hover {
+            background-color: #880000;
+        }
+
+        .deleteButton:active {
+            background-color: #FF0000;
+        }
+
+        input, textarea {
+            width: 100%;
+            font-family: 14pt;
+            color: #555555;
+            padding: 5px;
+        }
+
+        #noteTitle {
+            font-size: 18pt;
+            border-width: 0px 0px 1px 0px;
+            outline: none;
+
+        }
+
+        #noteText {
+            height: 200px;
+            font-size: 14pt;
+            border: solid 1px #AAAAAA;
+        }
+
+        h3 {
+            font-size: 20pt;
+            font-weight: 100;
+            letter-spacing: 1.2pt;
+        }
+        .noteTitle {
+            font-size:12pt;
+            border-bottom: solid 1px #888888;
+            width:90%;
+            background-color:#555588;
+            padding:5px;
+            color:#DDDDDD;
+            border-radius:5px;
+        }
+        .noteText {
+            font-size:10pt;
+            padding:3px;
+            color:#555555;
+        }
     </style>
 
     <script>
@@ -13,12 +117,9 @@
                 "serviceRequest" : JSON.stringify({
                     "taskTitle" : document.getElementById("taskTitle").value,
                     "taskDescrip" : document.getElementById("taskDescrip").value,
-                    "userId" : 6, // TODO: find out how to get session id in JSON
                     "listId" : 1 // TODO: Find what listId is being used and use it instead
                 })
             };
-
-            console.log("Sending create Tasks: " + JSON.stringify(taskData));
 
             $.ajax({
                 url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
@@ -42,13 +143,79 @@
 
         }
 
+        function getTasks() {
+            var information = {
+                "servicePath": "/task/getTasks",
+                "serviceRequest": JSON.stringify({
+                    "listId": 1 // TODO: Find what listId is being used and use it instead
+                })
+            };
+
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: taskData,
+                error: function(XMLHttpRequest, testStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data){
+                    console.log("Received response: "+data);
+
+                    var response = JSON.parse(data);
+
+                    document.getElementById("AllTasks").innerHTML = response.Tasks;
+
+
+                }
+            })
+
+        }
+        function showNotes() {
+            // Make sure we remove existing notes
+            document.getElementById("notes").innerHTML = "";
+            for (var i = 0; i < notes.length; i++) {
+                // Get our template object, make sure we do a deep clone so we get all tags
+                var noteTemplate = document.getElementById("noteTemplate").cloneNode(true);
+
+                // Get the noteTemplateText element by looking for it using the ID, the # is used to refer to the ID
+                var noteTemplateText = noteTemplate.querySelector("#noteTemplateText");
+                noteTemplateText.innerHTML = notes[i].noteText; // Set the note text
+
+
+                var noteTemplateTitle = noteTemplate.querySelector("#noteTemplateTitle");
+                noteTemplateTitle.innerHTML = notes[i].noteTitle;
+
+                // Get the button
+                var noteTemplateButton = noteTemplate.querySelector("#noteTemplateButton");
+
+                /*
+                 This is a closure, we use this to preserve the state of i within the body of the closure
+                 */
+                ( function (i) {
+                    // This is an anonymous function as well, it is attached to the button when we click on it
+                    noteTemplateButton.addEventListener("click", function () {
+                        // We remove the note from the array
+                        notes.splice(i, 1);
+
+                        // Then we rebuild our notes list
+                        showNotes();
+                    });
+                }(i));
+
+                // After we have our clone all ready, set the display, set the ID, and then append it to our notes div
+                noteTemplate.style.display = "block";
+                noteTemplate.setAttribute("id", "note" + i);
+                document.getElementById("notes").appendChild(noteTemplate);
+            }
+        }
+
 
 // TODO: Align the div "AllTasks" to work with multiple divs holding multiple tasks
 // TODO: Pretty it up
-// TODO: make it get the username
+
     </script>
     <meta charset="UTF-8">
-    <title>Welcome *User*</title>
+    <title>Welcome</title>
 </head>
 <body>
 Please enter the Task Title:
@@ -59,9 +226,21 @@ Please enter the Task Title:
 <div id="taskResponse">
 </div>
 
+<br />
+<br />
+<button onclick="getTasks()">Get all tasks</button>
+
+
 
 <div id="AllTasks">
 </div>
+
+<div id="noteTemplate" class="note" style="display:none">
+    <button id="noteTemplateButton" class="deleteButton">x</button>
+    <div id="noteTemplateTitle" class="noteTitle">Note Title</div>
+    <div id="noteTemplateText" class="noteText">
+        Some note text
+    </div>
 
 </body>
 </html>

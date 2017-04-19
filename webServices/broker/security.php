@@ -33,19 +33,21 @@ class securityBroker
   function createUser($request){
     $db = new db();
 
-    if($db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email,$request->Verification)){
-        $response["createUser"] = "user account created";
-    }
-    else{
-        $response["createUser"] = "User failed to be created";
+    if($request->Verification == 8675309) {
+
+        if ($db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email, $request->Verification)) {
+            $response["createUser"] = "user account created";
+        } else {
+            $response["createUser"] = "User failed to be created";
+        }
     }
 
     return $response;
   }
 
   function logOff($request){
-      session_unset();
-      session_destroy();
+    $session = new session();
+    $session->destroySession();
   }
 
   function hashPass($password){

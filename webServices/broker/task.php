@@ -13,11 +13,9 @@ class taskBroker{
         $db = new db();
         $session = new session();
 
-        $userId= $session->getSessionUserId();
 
-        if($userId > 0) {
-            $response["TaskResponse"] = "Never entered loop";
-            if ($db->createTask($request->taskTitle, $request->taskDescrip, $userId, $request->listId)) {
+        if($session->isSessionValid()) {
+            if ($db->createTask($request->taskTitle, $request->taskDescrip, $session->getSessionUserId(), $request->listId)) {
                 $response["TaskResponse"] = "The task has been created";
             } else {
                 $response["TaskResponse"] = "Failed to create task";
@@ -28,7 +26,17 @@ class taskBroker{
         else{
             return $response["TaskResponse"] = "Invalid Session Id";
         }
+    }
 
+    function getTasks($request){
+        $db = new db();
+        $session = new session();
+
+        if($session->isSessionValid()){
+            return $db->getTasks($session->getSessionUserId(),$request->listId);
+
+        }
+        return $response["session"] = "not a valid session Id";
 
     }
 }
