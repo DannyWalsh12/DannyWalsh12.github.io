@@ -70,7 +70,7 @@ class db {
     function createTask($taskTitle,$taskDescription,$userId,$listId){
         $db = $this->getDbConnection();
 
-        $query = "INSERT INTO tblTasks (TaskTitle, TaskDescrip, DateOfCreation, TaskId, userId, listId) VALUES (?,?,CURRENT_TIME() ,NULL, ?, ?)";
+        $query = "INSERT INTO `tblTasks` (`TaskTile`, `TaskDescrip`, `DateOfCreation`, `TaskId`, `userId`, `listId`) VALUES (?, ?, CURRENT_TIME(), NULL, ?, ?)";
         $sqlStatement = $db->prepare($query);
 
         $sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
@@ -116,7 +116,6 @@ class db {
 
 
     }
-
     function updateNote($noteId, $noteTitle, $noteContents) {
         $db = $this->getDbConnection();
 
@@ -149,7 +148,6 @@ class db {
         }
         return true;
     }
-
     function createNote($noteTitle, $noteContents, $userId) {
         $db = $this->getDbConnection();
 
@@ -172,7 +170,6 @@ class db {
         }
         return true;
     }
-
     function getNotes($userId) {
         $db = $this->getDbConnection();
 
