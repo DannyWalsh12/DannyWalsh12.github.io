@@ -31,17 +31,12 @@
           // Parse data into response object
           var response = JSON.parse(data);
 
-          // Set auth status
-          document.getElementById("response").innerHTML = response.userId;
-
           if (response.userId > 0){
               location.href = "UserHomepage.html";
           }
 
         }
       });
-      // TODO: Redirect to user Homepage
-      // TODO: Move createTask() to another file (user Homepage)
     }
 
 
@@ -57,14 +52,6 @@ Enter your Username:
 Enter the password!
 <input type="password" id="password"/>
 <button onclick="login()">Login</button>
-<div id="response">
-</div>
-<br />
-
-<br />
-<br />
-<br />
-
 
 </body>
 </html>

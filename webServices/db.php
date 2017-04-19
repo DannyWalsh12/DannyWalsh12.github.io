@@ -6,6 +6,8 @@
  * Date: 2/22/2017
  * Time: 10:31 AM
  */
+require_once ("session.php");
+
 class db {
     function getDbConnection() {
         // Setup DB Connection Information
@@ -41,6 +43,7 @@ class db {
         $userID = $userID;
 
         if($userID > 0){
+
             return $userID;
         }
         else{

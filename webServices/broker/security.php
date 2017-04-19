@@ -6,6 +6,7 @@
  */
 
 require_once ("db.php");
+require_once ("session.php");
 
 class securityBroker
 {
@@ -19,7 +20,11 @@ class securityBroker
 
     if($userId > 0){
         $response["userId"] = $userId;
-        $_SESSION["userId"] = $userId;
+
+        $session = new session();
+        $session->startSession();
+        $session->setSessionUserId($userId);
+
     }
 
     return $response;
