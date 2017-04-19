@@ -15,15 +15,19 @@ class taskBroker{
 
         $userId= $session->getSessionUserId();
 
-        $response["TaskResponse"] = "Never entered loop";
-        if($db->createTask($request->taskTitle,$request->taskDescrip,$userId,$request->listId)){
-            $response["TaskResponse"] = "The task has been created";
+        if($userId > 0) {
+            $response["TaskResponse"] = "Never entered loop";
+            if ($db->createTask($request->taskTitle, $request->taskDescrip, $userId, $request->listId)) {
+                $response["TaskResponse"] = "The task has been created";
+            } else {
+                $response["TaskResponse"] = "Failed to create task";
+            }
+
+            return $response;
         }
         else{
-            $response["TaskResponse"] = "Failed to create task";
+            return $response["TaskResponse"] = "Invalid Session Id";
         }
-
-        return $response;
 
 
     }
