@@ -164,7 +164,7 @@
                     var response = JSON.parse(data);
 
                     document.getElementById("AllTasks").innerHTML = "";
-                    for(var i =0; i<response.taskId.length;i++){
+                    for(var i =0; i<response.length;i++){
                         var TaskTemplate = document.getElementById(TaskTemplate).cloneNode(true);
 
                         var TaskTemplateText = TaskTemplate.querySelector("#TaskTemplateText");
