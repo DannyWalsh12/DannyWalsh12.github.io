@@ -166,7 +166,7 @@
 
                     document.getElementById("AllTasks").innerHTML = "";
                     for(var i =0; i<response.length;i++){
-                        var TaskTemplate = document.getElementById(TaskTemplate).cloneNode(true);
+                        var TaskTemplate = document.getElementById("TaskTemplate").cloneNode(true);
 
                         var TaskTemplateText = TaskTemplate.querySelector("#TaskTemplateText");
                         TaskTemplateText.innerHTML = response[i].taskDescription;
