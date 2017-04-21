@@ -103,7 +103,7 @@ class db {
         $sqlStatement->bind_result($Title,$Descrip,$TaskId);
 
         while($sqlStatement->fetch()){
-            $temp["taskTitle"] = $Title;
+            $temp["TaskTitle"] = $Title;
             $temp["taskDescription"] = $Descrip;
             $temp["taskId"] = $TaskId;
 

@@ -12,7 +12,7 @@
             flex-wrap: wrap;
         }
 
-        .note {
+        .task {
             padding: 5px;
             flex: 1 auto;
             min-width: 350px;
@@ -154,7 +154,7 @@
             $.ajax({
                 url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
                 type: 'post',
-                data: taskData,
+                data: information,
                 error: function(XMLHttpRequest, testStatus, errorThrown){
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
@@ -163,7 +163,30 @@
 
                     var response = JSON.parse(data);
 
-                    document.getElementById("AllTasks").innerHTML = response.Tasks;
+                    document.getElementById("AllTasks").innerHTML = "";
+                    for(var i =0; i<response.taskId.length;i++){
+                        var TaskTemplate = document.getElementById(TaskTemplate).cloneNode(true);
+
+                        var TaskTemplateText = TaskTemplate.querySelector("#TaskTemplateText");
+                        TaskTemplateText.innerHTML = response[i].taskDescription;
+
+                        var TaskTemplateTitle = TaskTemplate.querySelector("#TaskTemplateTitle");
+                        TaskTemplateTitle.innerHTML = response[i].TaskTitle;
+
+                        var TaskTemplateButton = TaskTemplate.querySelector("#TaskTemplateButton");
+
+                        (function (i) {
+                            TaskTemplateButton.addEventListener("click",function () {
+                                response.splice(i,1);
+                                getTasks();
+                            });
+
+                        }(i));
+
+                        TaskTemplate.style.display = "block";
+                        TaskTemplate.setAttribute("id", "taskId" + response[i].taskId);
+                        document.getElementById("AllTasks").appendChild(TaskTemplate);
+                    }
 
 
                 }
@@ -232,15 +255,16 @@ Please enter the Task Title:
 
 
 
-<div id="AllTasks">
+<div id="AllTasks" class="tasks" style="display: none">
 </div>
 
-<div id="noteTemplate" class="note" style="display:none">
-    <button id="noteTemplateButton" class="deleteButton">x</button>
-    <div id="noteTemplateTitle" class="noteTitle">Note Title</div>
-    <div id="noteTemplateText" class="noteText">
+<div id="TaskTemplate" class="task" style="display:none">
+    <button id="TaskTemplateButton" class="deleteButton">x</button>
+    <div id="TaskTemplateTitle" class="noteTitle">Note Title</div>
+    <div id="TaskTemplateText" class="noteText">
         Some note text
     </div>
+</div>
 
 </body>
 </html>
