@@ -16,6 +16,8 @@
             flex: 1 auto;
             border-radius: 5px;
             padding: 5px;
+            min-width: 33%;
+            max-width: 33%;
         }
 
         .task {
@@ -171,8 +173,8 @@
                     console.log(response.length);
 
 
-                    document.getElementById("AllTasks").innerHTML = "";
-                    document.getElementById("AllTasks").style.display = "block";
+                    document.getElementById("listId1").innerHTML = "";
+                    document.getElementById("listId1").style.display = "block";
 
                     for(var i =0; i<response.length;i++){
                         var TaskTemplate = document.getElementById("TaskTemplate").cloneNode(true);
@@ -196,7 +198,7 @@
                         TaskTemplate.style.display = "block";
 
                         TaskTemplate.setAttribute("id", "taskId" + response[i].taskId);
-                        document.getElementById("AllTasks").appendChild(TaskTemplate);
+                        document.getElementById("listId1").appendChild(TaskTemplate);
                     }
                 }
             })
@@ -232,9 +234,8 @@ Please enter the Task Title:
         Some note text
     </div>
 </div>
-<div id="listId1" class="List">
-    <div id="AllTasks" class="tasks" style="display: none">
-    </div>
+<div id="listId1" class="List" style="display: none">
+    
     <button onclick="createTask(1)">Create Task</button>
 </div>
 </body>
