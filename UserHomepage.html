@@ -79,7 +79,7 @@
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
+            width: 40%
         }
         .close {
             color: #aaaaaa;
@@ -95,20 +95,22 @@
             cursor: pointer;
         }
     </style>
-
     <script>
+        var list;
 
+        function showModal($listId) {
+            list=$listId;
+            modal.style.display="flex";
+        }
 
-        function createTask($listId) {
-           modal.style.display="block";
-
+        function createTask() {
 
             var taskData ={
                 "servicePath" : "/task/createTasks",
                 "serviceRequest" : JSON.stringify({
                     "taskTitle" : document.getElementById("taskTitle").value,
                     "taskDescrip" : document.getElementById("taskDescrip").value,
-                    "listId" : $listId // TODO: Find what listId is being used and use it instead
+                    "listId" : list // TODO: Find what listId is being used and use it instead
                 })
             };
 
@@ -226,10 +228,10 @@
 
                         var text = document.createTextNode("Create a task");
                         newButton.appendChild(text);
-                        newButton.setAttribute("Id", "CreateTask"+$list);
 
+                        newButton.setAttribute("Id", "CreateTask"+$list);
                         newButton.addEventListener('click', function () {
-                            createTask($list);
+                            showModal($list);
                         });
 
                         document.getElementById("Id"+$list).appendChild(newButton);
@@ -255,8 +257,8 @@
         <div class="Modal-content">
             <span class="close">&times;</span>
             <input type="text" id="taskTitle" placeholder="Enter task title"/>
-            <textarea rows="4" cols="50" id="taskDescrip" placeholder="Task Description">
-            </textarea>
+            <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description"></textarea>
+            <button type="submit" id="sumbitButton">Submit</button>
         </div>
     </div>
 
@@ -271,8 +273,15 @@
     <script>
         var modal = document.getElementById("MyModal");
         var span = document.getElementsByClassName("close")[0];
+        var btn = document.getElementById("submitButton");
 
         span.onclick=function () {
+            modal.style.display="none";
+        }
+        btn.onclick=function () {
+            createTask();
+            document.getElementById("taskTitle").value="";
+            document.getElementById("taskDescrip").innerText="";
             modal.style.display="none";
         }
     </script>
