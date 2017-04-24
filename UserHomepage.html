@@ -238,6 +238,7 @@
                         getTasks($list);
 
                         var newButton = document.createElement('BUTTON');
+                        newButton.createTextNode("Create a task");
                         newButton.addEventListener('click', function () {
                             createTask($list);
                         });
@@ -257,15 +258,16 @@
     <title>Welcome</title>
 </head>
 <body onload="getList()">
+<div id="List" style ="display: none"></div>
+
+<!--
 Please enter the Task Title:
 <input type="text" id="taskTitle"/>
 <br />
 <input type="text" id="taskDescrip" />
 <br />
 <br />
-<button onclick="getTasks()">Get all tasks</button>
-<br />
-<br />
+-->
 
 <div id="TaskTemplate" class="task" style="display:none">
     <button id="TaskTemplateButton" class="deleteButton">x</button>
@@ -274,7 +276,6 @@ Please enter the Task Title:
         Some note text
     </div>
 </div>
-<div id="List" style ="display: none">
-</div>
+
 </body>
 </html>
