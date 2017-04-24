@@ -97,15 +97,15 @@
     </style>
 
     <script>
-       /* var modal = document.getElementById("MyModal");
+        var modal = document.getElementById("MyModal");
         var span = document.getElementsByClassName("close")[0];
 
         span.onclick=function () {
             modal.style.display="none";
-        }*/
+        }
 
         function createTask($listId) {
-           // modal.style.display="block";
+           modal.style.display="block";
 
 
             var taskData ={
@@ -213,14 +213,13 @@
                         var $list= i+1;
                         //creates a new div element
                         var newDiv = document.createElement("div");
-                        newDiv.setAttribute("class", "All_Lists");
+                        newDiv.setAttribute("Class", "All_Lists");
 
                         //sets the Id of the created div element to be equal to the list Id
                         newDiv.setAttribute("id","Id" + response[i].Id);
 
                         //creates text to put inside the newly created div element
                         var newContent = document.createTextNode(response[i].Title);
-                        newContent.setAttribute("class","ListTitle");
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
 
@@ -256,7 +255,7 @@
 <body onload="getList()">
 <div id="List" class="List" style="display: none"></div>
 
-<!--
+<
 <div id="MyModal" class="Modal">
     <div class="Modal-content">
         <span class="close">&times;</span>
@@ -265,7 +264,7 @@
         </textarea>
     </div>
 </div>
--->
+
 
 
 <!--
