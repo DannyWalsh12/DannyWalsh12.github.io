@@ -169,10 +169,6 @@
 
                     var response = JSON.parse(data);
 
-
-                    document.getElementById("listId1").innerHTML = "";
-                    document.getElementById("listId1").style.display = "block";
-
                     for(var i =0; i<response.length;i++){
                         var TaskTemplate = document.getElementById("TaskTemplate").cloneNode(true);
 
@@ -190,7 +186,7 @@
                                 getTasks();
                             });
 
-                        }(i));
+                        }(i)); // TODO: remove this button to add a different way to delete tasks
 
                         TaskTemplate.style.display = "block";
 
