@@ -228,10 +228,10 @@
                         var newDiv = document.createElement("div");
 
                         //sets the Id of the created div element to be equal to the list Id
-                        newDiv.setAttribute("id","listId" + response[i].listId);
+                        newDiv.setAttribute("id","listId" + response[i].Id);
 
                         //creates text to put inside the newly created div element
-                        var newContent = document.createTextNode(response.Title);
+                        var newContent = document.createTextNode(response[i].Title);
 
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
