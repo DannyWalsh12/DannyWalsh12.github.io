@@ -114,6 +114,11 @@ class db {
 
 
     }
+    function GetLists($listId, $userId){
+        $db = $this->$this->getDbConnection();
+
+        $query = "Select";
+    }
 
     function searchNote($noteContentLike){
         $db = $this->getDbConnection();
