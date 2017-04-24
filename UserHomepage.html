@@ -79,17 +79,30 @@
             border: 1px solid #888;
             width: 80%;
         }
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 
     <script>
+        var modal = document.getElementById("MyModal");
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick=function () {
+            modal.style.display="none";
+        }
+
         function createTask($listId) {
-            var modal = document.getElementById("MyModal");
-            var span = document.getElementsByClassName("close")[0];
-
-            modal.style.display="block"
-
-
-
+            modal.style.display="block";
 
 
             var taskData ={
