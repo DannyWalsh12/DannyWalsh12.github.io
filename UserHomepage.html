@@ -258,7 +258,7 @@
             <span class="close">&times;</span>
             <input type="text" id="taskTitle" placeholder="Enter task title"/>
             <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description"></textarea>
-            <button type="submit" id="sumbitButton">Submit</button>
+            <button type="submit" id="sumbitButton" onclick="createTask()">Submit</button>
         </div>
     </div>
 
@@ -278,12 +278,12 @@
         span.onclick=function () {
             modal.style.display="none";
         }
-        btn.onclick=function () {
+      /*  btn.onclick=function () {
             createTask();
             document.getElementById("taskTitle").value="";
             document.getElementById("taskDescrip").innerText="";
             modal.style.display="none";
-        }
+        }*/
     </script>
 </body>
 
