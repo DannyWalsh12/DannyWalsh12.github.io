@@ -142,7 +142,7 @@
                     var response = JSON.parse(data);
 
                     // Set auth status
-                    document.getElementById("taskResponse").innerHTML = response.TaskResponse;
+                    alert(response.TaskResponse); //TODO: alert for now, will make to confirmation box if time permits
 
                 }
             });
@@ -223,6 +223,7 @@
                         var $list= i+1;
                         //creates a new div element
                         var newDiv = document.createElement("div");
+                        newDiv.setAttribute("Class", "All_Lists");
 
                         //sets the Id of the created div element to be equal to the list Id
                         newDiv.setAttribute("id","Id" + response[i].Id);
@@ -232,24 +233,19 @@
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
 
-                        var newButton = document.createElement('input');
-                        newButton.type = "button";
-                        newButton.addEventListener('click', function () {
-                                createTask($list);
-                            });
-
-
-
                         document.getElementById("List").appendChild(newDiv);
+
                         getTasks($list);
+
+                        var newButton = document.createElement('BUTTON');
+                        newButton.addEventListener('click', function () {
+                            createTask($list);
+                        });
                         document.getElementById("Id"+$list).appendChild(newButton);
 
                     }
                 }
             })
-        }
-        function checkTasks() {
-            setTimeout(getTasks,1000);
         }
 
 
@@ -278,7 +274,7 @@ Please enter the Task Title:
         Some note text
     </div>
 </div>
-<div id="List" style = "display: none">
+<div id="List" style ="display: none">
 </div>
 </body>
 </html>
