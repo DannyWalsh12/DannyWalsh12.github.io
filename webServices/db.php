@@ -117,17 +117,17 @@ class db {
     function getLists($userId){
         $db = $this->getDbConnection();
 
-        $query = "SELECT listName, listId FROM tblLists WHERE UserId = ?";
+        $query = "SELECT listId, listName FROM tblLists WHERE UserId = ?";
         $sqlStatement = $db->prepare($query);
         $sqlStatement->bind_param("i", $userId);
 
-        $results =array();
+        $results = array();
 
         if($sqlStatement->execute() === FALSE){
             echo $sqlStatement->error;
         }
 
-        $sqlStatement->bind_result($listTitle, $listId);
+        $sqlStatement->bind_result( $listId, $listTitle);
 
         while($sqlStatement->fetch()){
             $temp["Title"] = $listTitle;

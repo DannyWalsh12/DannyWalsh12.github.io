@@ -164,6 +164,8 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data){
+                    console.log("Received response: "+ data);
+
 
                     var response = JSON.parse(data);
 
@@ -237,12 +239,6 @@
                         document.getElementById("List").appendChild(newDiv);
 
                     }
-
-
-
-
-
-
                 }
             })
         }
