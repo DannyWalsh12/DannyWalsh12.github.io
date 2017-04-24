@@ -133,8 +133,9 @@ class db {
             $temp["Title"] = $listTitle;
             $temp["Id"] = $listId;
 
-            array($results,$temp);
+            array_push($results,$temp);
         }
+
         return $results;
 
 
