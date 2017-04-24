@@ -97,12 +97,7 @@
     </style>
 
     <script>
-        var modal = document.getElementById("MyModal");
-        var span = document.getElementsByClassName("close")[0];
 
-        span.onclick=function () {
-            modal.style.display="none";
-        }
 
         function createTask($listId) {
            modal.style.display="block";
@@ -252,24 +247,38 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
 </head>
+
 <body onload="getList()">
-<div id="List" class="List" style="display: none"></div>
-<div id="MyModal" class="Modal">
-    <div class="Modal-content">
-        <span class="close">&times;</span>
-        <input type="text" id="taskTitle" placeholder="Enter task title"/>
-        <textarea rows="4" cols="50" id="taskDescrip" placeholder="Task Description">
-        </textarea>
+    <div id="List" class="List" style="display: none">
     </div>
-</div>
-
-<div id="TaskTemplate" class="task" style="display:none">
-    <button id="TaskTemplateButton" class="deleteButton">x</button>
-    <div id="TaskTemplateTitle" class="noteTitle">Note Title</div>
-    <div id="TaskTemplateText" class="noteText">
-        Some note text
+    <div id="MyModal" class="Modal">
+        <div class="Modal-content">
+            <span class="close">&times;</span>
+            <input type="text" id="taskTitle" placeholder="Enter task title"/>
+            <textarea rows="4" cols="50" id="taskDescrip" placeholder="Task Description">
+            </textarea>
+        </div>
     </div>
-</div>
 
+    <div id="TaskTemplate" class="task" style="display:none">
+        <button id="TaskTemplateButton" class="deleteButton">x</button>
+        <div id="TaskTemplateTitle" class="noteTitle">Note Title</div>
+        <div id="TaskTemplateText" class="noteText">
+            Some note text
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("MyModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick=function () {
+            modal.style.display="none";
+        }
+    </script>
 </body>
+
+
+
+
 </html>
