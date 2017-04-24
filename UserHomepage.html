@@ -6,11 +6,6 @@
         body {
             font-family: Arial;
         }
-
-        #notes {
-            display: flex;
-            flex-wrap: wrap;
-        }
         .List{
             border: solid 1px #000000;
             flex: 1 auto;
@@ -48,58 +43,6 @@
             background-color: #9999FF;
         }
 
-        button:active {
-            background-color: #333377;
-            transform: translate(1px, 1px);
-        }
-
-        .deleteButton {
-            border-radius: 50%;
-            outline: none;
-            background-color: #AA5555;
-            float: right;
-            width: 20px;
-            height: 20px;
-            font-size: 12pt;
-            font-family: arial;
-            font-weight: normal;
-            box-shadow: 0px;
-            padding: 0px;
-        }
-
-        .deleteButton:hover {
-            background-color: #880000;
-        }
-
-        .deleteButton:active {
-            background-color: #FF0000;
-        }
-
-        input, textarea {
-            width: 100%;
-            font-family: 14pt;
-            color: #555555;
-            padding: 5px;
-        }
-
-        #noteTitle {
-            font-size: 18pt;
-            border-width: 0px 0px 1px 0px;
-            outline: none;
-
-        }
-
-        #noteText {
-            height: 200px;
-            font-size: 14pt;
-            border: solid 1px #AAAAAA;
-        }
-
-        h3 {
-            font-size: 20pt;
-            font-weight: 100;
-            letter-spacing: 1.2pt;
-        }
         .noteTitle {
             font-size:12pt;
             border-bottom: solid 1px #888888;
@@ -114,10 +57,41 @@
             padding:3px;
             color:#555555;
         }
+
+        .Modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .Modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
     </style>
 
     <script>
         function createTask($listId) {
+            var modal = document.getElementById("MyModal");
+            var span = document.getElementsByClassName("close")[0];
+
+            modal.style.display="block"
+
+
+
+
+
             var taskData ={
                 "servicePath" : "/task/createTasks",
                 "serviceRequest" : JSON.stringify({
@@ -238,11 +212,15 @@
                         getTasks($list);
 
                         var newButton = document.createElement('BUTTON');
+
                         var text = document.createTextNode("Create a task");
                         newButton.appendChild(text);
+                        newButton.setAttribute("Id", "CreateTask"+$list);
+
                         newButton.addEventListener('click', function () {
                             createTask($list);
                         });
+
                         document.getElementById("Id"+$list).appendChild(newButton);
 
                     }
@@ -259,7 +237,19 @@
     <title>Welcome</title>
 </head>
 <body onload="getList()">
-<div id="List" style ="display: none"></div>
+<div id="List" class="List" style="display: none"></div>
+
+<div id="MyModal" class="Modal">
+
+    <div class="Modal-content">
+        <span class="close">&times;</span>
+        <input type="text" id="taskTitle" placeholder="Enter task title"/>
+        <textarea rows="4" cols="50" id="taskDescrip" placeholder="Task Description">
+        </textarea>
+
+    </div>
+
+</div>
 
 <!--
 Please enter the Task Title:
