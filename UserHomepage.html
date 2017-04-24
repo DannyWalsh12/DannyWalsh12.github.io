@@ -231,15 +231,17 @@
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
 
-                        var newButton = document.createElement("BUTTON");
-                        newButton.innerHTML = "create Task"
-                        newButton.onclick = createTask(i+1);
-                        
+                        var newButton = document.createElement('input');
+                        newButton.type = "button";
+                        newButton.addEventListener('click', function () {
+                                createTask(i + 1);
+                            });
+
 
 
                         document.getElementById("List").appendChild(newDiv);
                         getTasks(i+1);
-                        newDiv.appendChild(newButton);
+                        document.getElementById("Id"+i+1).appendChild(newButton);
 
                     }
                 }
@@ -275,6 +277,5 @@ Please enter the Task Title:
 </div>
 <div id="List" style = "display: none">
 </div>
-<button onclick="createTask(1)">Create Task</button>
 </body>
 </html>
