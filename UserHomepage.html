@@ -79,7 +79,7 @@
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 40%
+            max-width: 400px;
         }
         .close {
             color: #aaaaaa;
@@ -130,6 +130,9 @@
 
                     // Set auth status
                     alert(response.TaskResponse); //TODO: alert for now, will make to confirmation box if time permits
+                    document.getElementById("taskTitle").value="";
+                    document.getElementById("taskDescrip").innerText="";
+                    modal.style.display="none";
 
                 }
             });
