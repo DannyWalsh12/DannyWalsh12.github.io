@@ -238,7 +238,8 @@
                         getTasks($list);
 
                         var newButton = document.createElement('BUTTON');
-                        newButton.createTextNode("Create a task");
+                        var text = document.createTextNode("Create a task");
+                        newButton.appendChild(text);
                         newButton.addEventListener('click', function () {
                             createTask($list);
                         });
