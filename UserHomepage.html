@@ -220,6 +220,7 @@
                     document.getElementById("List").style.display = "block";
 
                     for(var i=0;i<response.length;i++){
+                        var $list= i+1;
                         //creates a new div element
                         var newDiv = document.createElement("div");
 
@@ -234,14 +235,14 @@
                         var newButton = document.createElement('input');
                         newButton.type = "button";
                         newButton.addEventListener('click', function () {
-                                createTask(i + 1);
+                                createTask($list);
                             });
 
 
 
                         document.getElementById("List").appendChild(newDiv);
-                        getTasks(i+1);
-                        document.getElementById("Id"+i+1).appendChild(newButton);
+                        getTasks($list);
+                        document.getElementById("Id"+$list).appendChild(newButton);
 
                     }
                 }
@@ -267,6 +268,8 @@ Please enter the Task Title:
 <br />
 <br />
 <button onclick="getTasks()">Get all tasks</button>
+<br />
+<br />
 
 <div id="TaskTemplate" class="task" style="display:none">
     <button id="TaskTemplateButton" class="deleteButton">x</button>
