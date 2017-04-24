@@ -148,11 +148,11 @@
             });
 
         }
-        function getTasks() {
+        function getTasks($ListId) {
             var information = {
                 "servicePath": "/task/getTasks",
                 "serviceRequest": JSON.stringify({
-                    "listId": 1 // TODO: Find what listId is being used and use it instead
+                    "listId": $ListId // TODO: Find what listId is being used and use it instead
                 })
             };
 
@@ -228,7 +228,7 @@
                         var newDiv = document.createElement("div");
 
                         //sets the Id of the created div element to be equal to the list Id
-                        newDiv.setAttribute("id","listId" + response[i].Id);
+                        newDiv.setAttribute("id","Id" + response[i].Id);
 
                         //creates text to put inside the newly created div element
                         var newContent = document.createTextNode(response[i].Title);
@@ -237,6 +237,7 @@
                         newDiv.appendChild(newContent);
 
                         document.getElementById("List").appendChild(newDiv);
+                        getTasks(i);
 
                     }
                 }
@@ -274,9 +275,6 @@ Please enter the Task Title:
 </div>
 <div id="List" style = "display: none">
 </div>
-<div id="listId1" class="List" style="display: none">
-
-    <button onclick="createTask(1)">Create Task</button>
-</div>
+<button onclick="createTask(1)">Create Task</button>
 </body>
 </html>
