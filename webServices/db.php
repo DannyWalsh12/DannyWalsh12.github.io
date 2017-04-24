@@ -114,10 +114,30 @@ class db {
 
 
     }
-    function GetLists($listId, $userId){
-        $db = $this->$this->getDbConnection();
+    function getLists($userId){
+        $db = $this->getDbConnection();
 
-        $query = "Select";
+        $query = "SELECT listName, listId FROM tblLists WHERE UserId = ?";
+        $sqlStatement = $db->prepare($query);
+        $sqlStatement->bind_param("i", $userId);
+
+        $results =array();
+
+        if($sqlStatement->execute() === FALSE){
+            echo $sqlStatement->error;
+        }
+
+        $sqlStatement->bind_result($listTitle, $listId);
+
+        while($sqlStatement->fetch()){
+            $temp["Title"] = $listTitle;
+            $temp["Id"] = $listId;
+
+            array($results,$temp);
+        }
+        return $results;
+
+
     }
 
     function searchNote($noteContentLike){

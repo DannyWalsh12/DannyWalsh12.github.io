@@ -136,7 +136,7 @@
                 },
                 success: function(data) {
                     // Debugging - Uncomment to check data you received
-                    console.log("Received response: " + data);
+                    //console.log("Received response: " + data);
 
                     // Parse data into response object
                     var response = JSON.parse(data);
@@ -148,7 +148,6 @@
             });
 
         }
-
         function getTasks() {
             var information = {
                 "servicePath": "/task/getTasks",
@@ -165,10 +164,8 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data){
-                    console.log("Received response: "+data);
 
                     var response = JSON.parse(data);
-                    console.log(response.length);
 
 
                     document.getElementById("listId1").innerHTML = "";
@@ -202,6 +199,53 @@
             })
 
         }
+        function getList(){
+            var information = {
+                "servicePath" : "/task/getList",
+                "serviceRequest" : JSON.stringify({
+                })
+            };
+
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, testStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+                    console.log("Received response: " + data);
+
+                    var response = JSON.parse(data);
+
+                    document.getElementById("List").innerHTML = "";
+                    document.getElementById("List").style.display = "block";
+
+                    for(var i=0;i<response.length;i++){
+                        //creates a new div element
+                        var newDiv = document.createElement("div");
+
+                        //sets the Id of the created div element to be equal to the list Id
+                        newDiv.setAttribute("id","listId" + response[i].listId);
+
+                        //creates text to put inside the newly created div element
+                        var newContent = document.createTextNode(response.Title);
+
+                        //attach the created text to the created div element
+                        newDiv.appendChild(newContent);
+
+                        document.getElementById("List").appendChild(newDiv);
+
+                    }
+
+
+
+
+
+
+                }
+            })
+        }
         function checkTasks() {
             setTimeout(getTasks,1000);
         }
@@ -214,7 +258,7 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
 </head>
-<body onload="checkTasks()">
+<body onload="getList()">
 Please enter the Task Title:
 <input type="text" id="taskTitle"/>
 <br />
@@ -231,6 +275,8 @@ Please enter the Task Title:
     <div id="TaskTemplateText" class="noteText">
         Some note text
     </div>
+</div>
+<div id="List" style = "display: none">
 </div>
 <div id="listId1" class="List" style="display: none">
 

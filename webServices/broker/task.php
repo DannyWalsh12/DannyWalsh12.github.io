@@ -39,4 +39,15 @@ class taskBroker{
         return $response["session"] = "not a valid session Id";
 
     }
+
+    function getList(){
+        $db = new db();
+        $session = new session();
+
+        if($session->isSessionValid()){
+            return $db->getLists($session->getSessionUserId());
+        }
+        return $response["session"] = "not a valid session Id";
+
+    }
 }
