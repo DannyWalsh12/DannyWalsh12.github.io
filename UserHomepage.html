@@ -276,6 +276,14 @@
 
                         getTasks($list);
 
+                        var ButtonSpan = document.createElement("span");
+                        ButtonSpan.innerHTML= '<button id="CreateTask' + $list +'" class="CreateButton" onclick="showModal($list)" />';
+
+                        var text = document.createTextNode("Create a task");
+                        ButtonSpan.appendChild(text);
+                        document.getElementById("Id"+$list).appendChild(ButtonSpan);
+
+                        /*
                         var newButton = document.createElement('BUTTON');
 
                         var text = document.createTextNode("Create a task");
@@ -284,10 +292,10 @@
                         newButton.setAttribute("Id", "CreateTask"+$list);
                         newButton.setAttribute("Class","CreateButton");
                         newButton.addEventListener('click', function () {
-                            showModal($list);
+                            showModal($list); // TODO: track where this came from
                         });
 
-                        document.getElementById("Id"+$list).appendChild(newButton);
+                        document.getElementById("Id"+$list).appendChild(newButton);*/
 
                     }
                 }
@@ -367,12 +375,12 @@
 
     <script>
         var modal = document.getElementById("MyModal");
-        var span = document.getElementById("ModalClose")[0];
+        var Modalspan = document.getElementsByClassName("close")[0];
 
         var ListModal = document.getElementById("ListModal");
-        var ListSpan = document.getElementById("ListClose");
+        var ListSpan = document.getElementsByClassName("close")[1];
 
-        span.onclick=function () {
+        Modalspan.onclick=function () {
             document.getElementById("taskTitle").value="";
             document.getElementById("taskDescrip").innerText="";
             modal.style.display="none";
