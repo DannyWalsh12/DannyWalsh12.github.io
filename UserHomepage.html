@@ -277,10 +277,8 @@
                         getTasks($list);
 
                         var ButtonSpan = document.createElement("span");
-                        ButtonSpan.innerHTML= '<button id="CreateTask' + $list +'" class="CreateButton" onclick="showModal($list)" />';
+                        ButtonSpan.innerHTML= '<button id="CreateTask' + $list +'" class="CreateButton" onclick="showModal(' + $list +')">Create a Task</button>';
 
-                        var text = document.createTextNode("Create a task");
-                        ButtonSpan.appendChild(text);
                         document.getElementById("Id"+$list).appendChild(ButtonSpan);
 
                         /*
