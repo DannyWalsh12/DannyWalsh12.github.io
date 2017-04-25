@@ -79,7 +79,7 @@ class db {
         $sqlStatement->bind_param("ssii", $taskTitle, $taskDescription, $userId, $listId);
 
         if($sqlStatement->execute() === FALSE){
-            return "issue with creating Tasks".$sqlStatement->error;
+            return false;
 
         }
         return true;
@@ -112,6 +112,20 @@ class db {
 
         return $results;
 
+
+    }
+    function createList($ListName,$userId){
+        $db= $this->getDbConnection();
+
+        $query = "INSERT INTO tblLists (listId, listName, UserId) VALUES (NULL, ?, ?)";
+        $sqlStatement=$db->prepare($query);
+        $sqlStatement->bind_param("si", $ListName,$userId);
+
+        if($sqlStatement->execute() === FALSE){
+            return false;
+        }
+
+        return true;
 
     }
     function getLists($userId){

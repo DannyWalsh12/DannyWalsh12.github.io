@@ -27,6 +27,22 @@ class taskBroker{
             return $response["TaskResponse"] = "Invalid Session Id";
         }
     }
+    function createList($request){
+        $db = new db();
+        $session = new session();
+
+        if($session->isSessionValid()){
+            if($db->createList($request->ListTitle, $session->getSessionUserId())){
+                $response["ListResponse"] = "The List has been created";
+            }
+            else {
+                $response["ListResponse"] = "Failed to Create List";
+            }
+            return $response;
+        }
+        return $response["ListResponse"] = "Invalid Session Id";
+
+    }
 
     function getTasks($request){
         $db = new db();

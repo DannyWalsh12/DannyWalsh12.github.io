@@ -191,7 +191,7 @@
                         (function (i) {
                             TaskTemplateButton.addEventListener("click",function () {
                                 response.splice(i,1);
-                                getTasks();
+                                getTasks(list);
                             });
 
                         }(i)); // TODO: remove this button to add a different way to delete tasks
@@ -262,6 +262,32 @@
                 }
             })
         }
+        function CreateList() {
+            var information = {
+                "servicePath" : "/task/createList",
+                "serviceRequest" : JSON.stringify({
+                    "ListTitle" : document.getElementById("ListTitle").value
+                })
+            };
+
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, testStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+                    console.log("Received response: " + data);
+
+                    getList();
+                }
+
+
+                });
+
+        }
+
 
 
 // TODO: Align the div "AllTasks" to work with multiple divs holding multiple tasks
@@ -273,6 +299,8 @@
 </head>
 
 <body onload="getList()">
+<input type="text" id="ListTitle" placeholder="Enter List Title"/>
+<button onclick="CreateList()">Create new List</button>
     <div id="List" class="All_List" style="display: none">
     </div>
     <div id="MyModal" class="Modal">
