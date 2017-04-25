@@ -13,7 +13,7 @@
             overflow-x: hidden;
 
         }
-        .listbutton{
+        .ListButton{
             float: none;
         }
         .CreateButton {
@@ -106,6 +106,27 @@
             border: 1px solid #888;
             max-width: 400px;
         }
+        .ListModal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .List-Modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            max-width: 400px;
+        }
         .close {
             color: #aaaaaa;
             float: right;
@@ -126,6 +147,9 @@
         function showModal($listId) {
             list=$listId;
             modal.style.display="block";
+        }
+        function ShowCreateList() {
+            ListModal.style.display="block";
         }
 
         function createTask() {
@@ -244,7 +268,7 @@
                         newDiv.setAttribute("id","Id" + response[i].Id);
 
                         //creates text to put inside the newly created div element
-                        var newContent = document.createTextNode(response[i].Title);
+                        var newContent = document.createTextNode(response[i].Title); // TODO: have this always at the top of the scroll box along with the CreateTask button
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
 
@@ -286,7 +310,8 @@
                 },
                 success: function(data) {
                     console.log("Received response: " + data);
-
+                    document.getElementById("ListTitle").value="";
+                    ListModal.style.display="none";
                     getList();
                 }
 
@@ -306,18 +331,31 @@
 </head>
 
 <body onload="getList()">
-<input type="text" id="ListTitle" placeholder="Enter List Title"/>
-<button onclick="CreateList()" class="ListButton">Create new List</button>
+<button onclick="ShowCreateList()" class="ListButton">Create new List</button>
+
     <div id="List" class="All_List" style="display: none">
     </div>
     <div id="MyModal" class="Modal">
         <div class="Modal-content">
-            <span class="close">&times;</span>
+            <span id="ModalClose" class="close">&times;</span>
             <input type="text" id="taskTitle" placeholder="Enter task title"/>
             <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description"></textarea>
             <button type="submit" id="sumbitButton" onclick="createTask()" class="SubBtn">Submit</button>
         </div>
     </div>
+
+    <div id="ListModal" class="ListModal">
+        <div class="List-Modal-content">
+            <span id="ListClose" class="close">&times;</span>
+            <input type="text" id="ListTitle" placeholder="Enter List title"/>
+            <button type="submit" onclick="CreateList()" class="ListButton">Submit</button>
+        </div>
+    </div>
+
+
+
+
+
 
     <div id="TaskTemplate" class="task" style="display:none">
         <button id="TaskTemplateButton" class="deleteButton">x</button>
@@ -329,11 +367,19 @@
 
     <script>
         var modal = document.getElementById("MyModal");
-        var span = document.getElementsByClassName("close")[0];
-        var btn = document.getElementById("submitButton");
+        var span = document.getElementById("ModalClose")[0];
+
+        var ListModal = document.getElementById("ListModal");
+        var ListSpan = document.getElementById("ListClose");
 
         span.onclick=function () {
+            document.getElementById("taskTitle").value="";
+            document.getElementById("taskDescrip").innerText="";
             modal.style.display="none";
+        }
+        ListSpan.onclick=function () {
+            document.getElementById("ListTitle").value="";
+            ListModal.style.display="none;"
         }
       /*  btn.onclick=function () {
             createTask();
