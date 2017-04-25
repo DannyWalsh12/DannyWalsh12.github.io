@@ -178,10 +178,11 @@
                     var response = JSON.parse(data);
 
                     // Set auth status
-                    alert(response.TaskResponse); //TODO: alert for now, will make to confirmation box if time permits
+                    //alert(response.TaskResponse); //TODO: alert for now, will make to confirmation box if time permits
                     document.getElementById("taskTitle").value="";
                     document.getElementById("taskDescrip").innerText="";
                     modal.style.display="none";
+                    getTasks(list);
 
                 }
             });
@@ -280,20 +281,6 @@
                         ButtonSpan.innerHTML= '<button id="CreateTask' + $list +'" class="CreateButton" onclick="showModal(' + $list +')">Create a Task</button>';
 
                         document.getElementById("Id"+$list).appendChild(ButtonSpan);
-
-                        /*
-                        var newButton = document.createElement('BUTTON');
-
-                        var text = document.createTextNode("Create a task");
-                        newButton.appendChild(text);
-
-                        newButton.setAttribute("Id", "CreateTask"+$list);
-                        newButton.setAttribute("Class","CreateButton");
-                        newButton.addEventListener('click', function () {
-                            showModal($list); // TODO: track where this came from
-                        });
-
-                        document.getElementById("Id"+$list).appendChild(newButton);*/
 
                     }
                 }
