@@ -5,21 +5,36 @@
     <style>
         body {
             font-family: Arial;
+            font-size: 18pt;
         }
-        .List{
+        .All_List{
+            height: 1000px;
+            padding:3px;
+            background:#f00;
+
+        }
+        .CreateButton {
+            float: right;
+        }
+        .Single_List{
             border: solid 1px #000000;
             flex: 1 auto;
             border-radius: 5px;
             padding: 5px;
-            min-width: 500px;
-            max-width: 500px;
+            min-width: 450px;
+            max-width: 450px;
+            height: 950px;
+            overflow: auto;
+        }
+        .deleteButton{
+            font-size: 14pt;
+            background-color: red;
         }
 
         .task {
             padding: 5px;
             flex: 1 auto;
             min-width: 350px;
-            max-width: 350px;
             margin: 30px;
             height: 150px;
             padding:15px;
@@ -38,24 +53,28 @@
             color: white;
             outline: none;
             box-shadow: 2px 2px 2px #DDDDDD;
+            float:right;
 
         }
 
         button:hover {
             background-color: #9999FF;
         }
+        .SubBtn{
+            font-size: 15pt;
+        }
 
         .noteTitle {
-            font-size:12pt;
+            font-size:14pt;
             border-bottom: solid 1px #888888;
-            width:90%;
+            width:85%;
             background-color:#555588;
             padding:5px;
             color:#DDDDDD;
             border-radius:5px;
         }
         .noteText {
-            font-size:10pt;
+            font-size:12pt;
             padding:3px;
             color:#555555;
         }
@@ -100,7 +119,7 @@
 
         function showModal($listId) {
             list=$listId;
-            modal.style.display="flex";
+            modal.style.display="block";
         }
 
         function createTask() {
@@ -213,13 +232,14 @@
                         var $list= i+1;
                         //creates a new div element
                         var newDiv = document.createElement("div");
-                        newDiv.setAttribute("Class", "All_Lists");
+                        newDiv.setAttribute("Class", "Single_List");
 
                         //sets the Id of the created div element to be equal to the list Id
                         newDiv.setAttribute("id","Id" + response[i].Id);
 
                         //creates text to put inside the newly created div element
                         var newContent = document.createTextNode(response[i].Title);
+                        newContent.setAttribute()
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
 
@@ -233,6 +253,7 @@
                         newButton.appendChild(text);
 
                         newButton.setAttribute("Id", "CreateTask"+$list);
+                        newButton.setAttribute("Class","CreateButton");
                         newButton.addEventListener('click', function () {
                             showModal($list);
                         });
@@ -254,14 +275,14 @@
 </head>
 
 <body onload="getList()">
-    <div id="List" class="List" style="display: none">
+    <div id="List" class="All_List" style="display: none">
     </div>
     <div id="MyModal" class="Modal">
         <div class="Modal-content">
             <span class="close">&times;</span>
             <input type="text" id="taskTitle" placeholder="Enter task title"/>
             <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description"></textarea>
-            <button type="submit" id="sumbitButton" onclick="createTask()">Submit</button>
+            <button type="submit" id="sumbitButton" onclick="createTask()" class="SubBtn">Submit</button>
         </div>
     </div>
 
