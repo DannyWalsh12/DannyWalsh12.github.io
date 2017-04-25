@@ -182,7 +182,6 @@
                     document.getElementById("taskTitle").value="";
                     document.getElementById("taskDescrip").innerText="";
                     modal.style.display="none";
-                    getTasks(list);
 
                 }
             });
@@ -209,10 +208,6 @@
 
                     var response = JSON.parse(data);
 
-                    for(var j =0; j<response.length;j++){
-                        document.getElementById("taskId" + response[j].taskId).innerHTML="";
-                    }
-
                     for(var i =0; i<response.length;i++){
                         var TaskTemplate = document.getElementById("TaskTemplate").cloneNode(true);
 
@@ -233,7 +228,7 @@
                         }(i)); // TODO: remove this button to add a different way to delete tasks
 
                         TaskTemplate.style.display = "block";
-                        
+
                         TaskTemplate.setAttribute("id", "taskId" + response[i].taskId);
                         document.getElementById("Id"+$ListId).appendChild(TaskTemplate);
                     }
