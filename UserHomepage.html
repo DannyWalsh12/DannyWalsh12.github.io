@@ -8,22 +8,28 @@
             font-size: 18pt;
         }
         .All_List{
-            height: 700px;
+            height: 800px;
             padding:3px;
 
+        }
+        .listbutton{
+            float: none;
         }
         .CreateButton {
             float: right;
         }
         .Single_List{
-            border: solid 1px #000000;
+            border: solid 1px #9999FF;
             flex: 1 auto;
             border-radius: 5px;
             padding: 5px;
             min-width: 450px;
             max-width: 450px;
-            height: 650px;
+            height: 680px;
             overflow: auto;
+            margin: 10px;
+            scrollbar-track-color: cyan;
+
         }
         .deleteButton{
             font-size: 14pt;
@@ -172,7 +178,7 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data){
-                    console.log("Received response: "+ data);
+                    //console.log("Received response: "+ data);
 
 
                     var response = JSON.parse(data);
@@ -220,12 +226,12 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data) {
-                    console.log("Received response: " + data);
+                   // console.log("Received response: " + data);
 
                     var response = JSON.parse(data);
 
                     document.getElementById("List").innerHTML = "";
-                    document.getElementById("List").style.display = "block";
+                    document.getElementById("List").style.display = "flex";
 
                     for(var i=0;i<response.length;i++){
                         var $list= i+1;
@@ -300,7 +306,7 @@
 
 <body onload="getList()">
 <input type="text" id="ListTitle" placeholder="Enter List Title"/>
-<button onclick="CreateList()">Create new List</button>
+<button onclick="CreateList()" class="ListButton">Create new List</button>
     <div id="List" class="All_List" style="display: none">
     </div>
     <div id="MyModal" class="Modal">
