@@ -286,7 +286,7 @@
                     document.getElementById("List").style.display = "flex";
 
                     for(var i=0;i<response.length;i++){
-                        var $list= i+1;
+                        //var $list= response[i].id;
                         //creates a new div element
                         var newDiv = document.createElement("div");
                         newDiv.setAttribute("Class", "Single_List");
@@ -301,12 +301,12 @@
 
                         document.getElementById("List").appendChild(newDiv);
 
-                        getTasks($list);
+                        getTasks(response[i].id);
 
                         var ButtonSpan = document.createElement("span");
-                        ButtonSpan.innerHTML= '<button id="CreateTask' + $list +'" class="CreateButton" onclick="showModal(' + $list +')">Create a Task</button>';
+                        ButtonSpan.innerHTML= '<button id="CreateTask' + response[i].id +'" class="CreateButton" onclick="showModal(' + response[i].id +')">Create a Task</button>';
 
-                        document.getElementById("Id"+$list).appendChild(ButtonSpan);
+                        document.getElementById("Id"+response[i].id).appendChild(ButtonSpan);
 
                     }
                 }
@@ -359,7 +359,7 @@
             <span id="ModalClose" class="close">&times;</span>
             <input type="text" id="taskTitle" placeholder="Enter task title"/>
             <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description"></textarea>
-            <button type="submit" id="sumbitButton" onclick="createTask()" class="SubBtn">Submit</button>
+            <button type="submit" id="sumbitButton" onclick="createTask()" class="SubBtn">Create</button>
         </div>
     </div>
 
@@ -367,7 +367,7 @@
         <div class="List-Modal-content">
             <span id="ListClose" class="close">&times;</span>
             <input type="text" id="ListTitle" placeholder="Enter List title"/>
-            <button type="submit" onclick="CreateList()" class="ListButton">Submit</button>
+            <button type="submit" onclick="CreateList()" class="ListButton">Create</button>
         </div>
     </div>
 
