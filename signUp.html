@@ -27,13 +27,17 @@
 
                     var response = JSON.parse(data);
 
-                    document.getElementById("CreateUserResponse").innerHTML = response.createUser;
+                    if(response.createUser){
+                        location.href = "login.html";
+                    }
+                    else{
+                        alert("Failed to create user account");
+                    }
 
                 }
             });
 
         }
-        // TODO: Redirect to the login page
         // TODO: Make it more user friendly and appealing
     </script>
 

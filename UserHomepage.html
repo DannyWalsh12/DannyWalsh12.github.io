@@ -17,6 +17,9 @@
         .ListButton{
             float: none;
         }
+        .LogOutButton{
+            float: right;
+        }
         .CreateButton {
             float: right;
         }
@@ -150,6 +153,27 @@
         }
         function ShowCreateList() {
             ListModal.style.display="block";
+        }
+        function LogOut(){
+            var information = {
+                "servicePath": "/security/LogOut",
+                "serviceRequest": JSON.stringify({
+                })
+            };
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, textStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+                    location.href = "login.html"
+
+                }
+            });
+
+
         }
 
         function createTask() {
@@ -341,6 +365,7 @@
 
 
 
+
 // TODO: Align the div "AllTasks" to work with multiple divs holding multiple tasks
 // TODO: Pretty it up
 
@@ -351,6 +376,7 @@
 
 <body onload="getList()">
 <button onclick="ShowCreateList()" class="ListButton">Create new List</button>
+<button onclick="LogOut()" class="LogOutButton">Logout</button>
 
     <div id="List" class="All_List" style="display: none">
     </div>
@@ -386,26 +412,20 @@
 
     <script>
         var modal = document.getElementById("MyModal");
-        var Modalspan = document.getElementsByClassName("close")[0];
+        var ModalSpan = document.getElementsByClassName("close")[0];
 
         var ListModal = document.getElementById("ListModal");
-        var ListSpan = document.getElementsByClassName("close")[1];
+        var ListSpan = document.getElementsByClassName("close")[0];
 
-        Modalspan.onclick=function () {
+        ModalSpan.onclick=function () {
             document.getElementById("taskTitle").value="";
-            document.getElementById("taskDescrip").innerText="";
+            document.getElementById("taskDescrip").value="";
             modal.style.display="none";
         }
         ListSpan.onclick=function () {
             document.getElementById("ListTitle").value="";
             ListModal.style.display="none;"
         }
-      /*  btn.onclick=function () {
-            createTask();
-            document.getElementById("taskTitle").value="";
-            document.getElementById("taskDescrip").innerText="";
-            modal.style.display="none";
-        }*/
     </script>
 </body>
 

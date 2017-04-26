@@ -36,16 +36,19 @@ class securityBroker
     if($request->Verification == 8675309) {
 
         if ($db->createUserAccount($request->username, $this->hashPass($request->Password), $request->Email, $request->Verification)) {
-            $response["createUser"] = "user account created";
+            $response["createUser"] = true;
         } else {
-            $response["createUser"] = "User failed to be created";
+            $response["createUser"] = false;
         }
+    }
+    else{
+        $response["createUser"] = false;
     }
 
     return $response;
   }
 
-  function logOff($request){
+  function LogOut(){
     $session = new session();
     $session->destroySession();
   }
