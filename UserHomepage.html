@@ -221,9 +221,9 @@
 
                         (function (i) {
                             TaskTemplateButton.addEventListener("click",function () {
-                                if(DeleteTask(response[i].taskId)) {
-                                    getList();
-                                }
+                                DeleteTask(response[i].taskId)
+                                getList();
+
                             });
 
                         }(i)); // TODO: remove this button to add a different way to delete tasks
