@@ -301,12 +301,12 @@
 
                         document.getElementById("List").appendChild(newDiv);
 
-                        getTasks(response[i].id);
+                        getTasks(response[i].Id);
 
                         var ButtonSpan = document.createElement("span");
-                        ButtonSpan.innerHTML= '<button id="CreateTask' + response[i].id +'" class="CreateButton" onclick="showModal(' + response[i].id +')">Create a Task</button>';
+                        ButtonSpan.innerHTML= '<button id="CreateTask' + response[i].Id +'" class="CreateButton" onclick="showModal(' + response[i].Id +')">Create a Task</button>';
 
-                        document.getElementById("Id"+response[i].id).appendChild(ButtonSpan);
+                        document.getElementById("Id"+response[i].Id).appendChild(ButtonSpan);
 
                     }
                 }
