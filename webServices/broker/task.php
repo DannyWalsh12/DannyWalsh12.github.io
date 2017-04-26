@@ -66,12 +66,12 @@ class taskBroker{
         return $response["session"] = "not a valid session Id";
 
     }
-    function DeleteTasks($taskId){
+    function DeleteTasks($request){
         $db = new db();
         $session = new session();
 
         if($session->isSessionValid()){
-            return $db->DeleteTask($taskId);
+            return $db->DeleteTask($request->taskId);
         }
         return $response["session"] = "Not a valid session Id";
     }
