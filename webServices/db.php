@@ -114,6 +114,21 @@ class db {
 
 
     }
+    function DeleteTask($taskId){
+        $db= $this->getDbConnection();
+
+        $query = "DELETE FROM `tblTasks` WHERE `tblTasks`.`TaskId` = ?";
+        $sqlStatement = $db->prepare($query);
+        $sqlStatement->bind_param("i",$taskId);
+
+        if($sqlStatement->execute() === FALSE){
+            return false;
+        }
+        return true;
+
+
+
+    }
     function createList($ListName,$userId){
         $db= $this->getDbConnection();
 
