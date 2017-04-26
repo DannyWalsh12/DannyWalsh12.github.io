@@ -10,8 +10,6 @@
         .All_List{
             height: 800px;
             padding:3px;
-            overflow-x: scroll;
-            overflow-y: hidden;
             position: absolute;
             bottom: 0px;
 
@@ -223,7 +221,7 @@
 
                         (function () {
                             TaskTemplateButton.addEventListener("click",function () {
-                                if(DeleteTask(response.taskId)) {
+                                if(DeleteTask(response[i].taskId)) {
                                     getTasks(list);
                                 }
                             });
