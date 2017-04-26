@@ -219,7 +219,7 @@
 
                         var TaskTemplateButton = TaskTemplate.querySelector("#TaskTemplateButton");
 
-                        (function () {
+                        (function (i) {
                             TaskTemplateButton.addEventListener("click",function () {
                                 if(DeleteTask(response[i].taskId)) {
                                     getTasks(list);
