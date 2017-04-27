@@ -84,6 +84,7 @@
         }
         .SubBtn{
             font-size: 15pt;
+            margin-top: 56px;
         }
 
         .noteTitle {
@@ -120,7 +121,7 @@
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            max-width: 400px;
+            max-width: 500px;
         }
         .ListModal {
             display: none; /* Hidden by default */
@@ -141,7 +142,7 @@
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            max-width: 400px;
+            max-width: 500px;
         }
         .close {
             color: #aaaaaa;
@@ -155,6 +156,11 @@
             color: #000;
             text-decoration: none;
             cursor: pointer;
+        }
+        input{
+            font-size: 14pt;
+            width: 350px;
+            height: 25px;
         }
     </style>
     <script>
@@ -418,8 +424,8 @@
     <div id="MyModal" class="Modal">
         <div class="Modal-content">
             <span id="ModalClose" class="close">&times;</span>
-            <input type="text" id="taskTitle" placeholder="Enter task title"/>
-            <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description"></textarea>
+            <input type="text" id="taskTitle" placeholder="Enter task title" style="font-size: 12pt"/>
+            <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description" style="font-size: 12pt; margin: 0px; height: 80px; width: 332px;"></textarea>
             <button type="submit" id="sumbitButton" onclick="createTask()" class="SubBtn">Create</button>
         </div>
     </div>
