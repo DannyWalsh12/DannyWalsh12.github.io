@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:style="http://www.w3.org/1999/xhtml">
 <head>
   <style>
     body {
     font-family: Arial;
-    font-size: 18pt;
+    font-size: 16pt;
     }
     button {
     border-radius: 10px;
@@ -29,16 +29,11 @@
     function login() {
       var postData = {
         "servicePath" : "/security/authenticate",
-        // Make sure you JSON encode (stringify) your request data. Web Service expects it (based on contract) to be encoded in JSON.
         "serviceRequest" : JSON.stringify({
           "username" : document.getElementById("username").value,
           "secretPassword" : document.getElementById("password").value
         })
       };
-
-
-      // Debugging - Uncomment to check the data you are sending
-      console.log("Sending request: " + JSON.stringify(postData));
 
       $.ajax({
         url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
@@ -48,10 +43,6 @@
           console.log("Error occurred, please try again!" + XMLHttpRequest.status);
         },
         success: function(data) {
-          // Debugging - Uncomment to check data you received
-          //console.log("Received response: " + data);
-
-          // Parse data into response object
           var response = JSON.parse(data);
 
           if (response.userId > 0){
@@ -59,6 +50,7 @@
           }
           else{
               alert("Invalid username or password\nPlease try again");
+              document.getElementById("password").value="";
           }
 
         }
@@ -74,11 +66,11 @@
 <h3>Login to Trello 2.0!</h3>
 
 Enter your Username:
-<input type="text" id="username" />
+<input type="text" id="username" style="font-size: 12pt"/>
 <br />
 Enter your Password:
 <input type="password" id="password" style="margin-left: 5px"/>
-<button onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
+<button onclick="login()" class="LoginButton" style="margin-left: 20px; font-size: 12pt">Login</button>
 
 </body>
 </html>
