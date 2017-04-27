@@ -52,6 +52,28 @@ class db {
 
     }
 
+    function getUser($userId){
+        $db = $this->getDbConnection();
+
+        $query = "SELECT `username` FROM `tblUser` WHERE `userId` = ?";
+        $sqlStatement = $db->prepare($query);
+        $sqlStatement->bind_param("i",$userId);
+
+        if($sqlStatement->execute() === FALSE){
+            return "Error!".$sqlStatement->error;
+        }
+
+        $sqlStatement->bind_result($Name);
+        $sqlStatement->fetch();
+
+        return $Name;
+
+
+
+
+
+    }
+
     function createUserAccount($username,$password,$email,$verificationCode){
         $db = $this->getDbConnection();
 

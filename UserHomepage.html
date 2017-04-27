@@ -64,10 +64,10 @@
             font-size: 18pt;
             font-weight: lighter;
             padding: 5px 10px 5px 10px;
-            background-color: #9999AA;
+            background-color: #a929ff;
             color: white;
             outline: none;
-            box-shadow: 2px 2px 2px #DDDDDD;
+            box-shadow: 5px 5px 5px #5a5a5a;
             float:right;
 
         }
@@ -159,6 +159,28 @@
         }
         function ShowCreateList() {
             ListModal.style.display="block";
+        }
+        function getUsername(){
+            var information = {
+                "servicePath": "/security/getUser",
+                "serviceRequest": JSON.stringify({
+                })
+            };
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, textStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+                    var $response = JSON.parse(data);
+
+                    document.getElementById("title").innerHTML=$response.name;
+
+                }
+            });
+
         }
         function LogOut(){
             var information = {
@@ -377,7 +399,7 @@
 
     </script>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title id="title"></title>
 </head>
 
 <body onload="getList()">

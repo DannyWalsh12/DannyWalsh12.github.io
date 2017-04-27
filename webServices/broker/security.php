@@ -48,6 +48,18 @@ class securityBroker
     return $response;
   }
 
+  function getUser(){
+      $db = new db();
+      $session = new session();
+
+      if($session->isSessionValid()){
+          $response["name"] = $db->getUser($session->getSessionUserId());
+          return $response;
+      }
+      return "not a valid session Id";
+
+  }
+
   function LogOut(){
     $session = new session();
     $session->destroySession();

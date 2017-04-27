@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+    body {
+    font-family: Arial;
+    font-size: 18pt;
+    }
+    button {
+    border-radius: 10px;
+    border: solid 0px #000000;
+    font-size: 18pt;
+    font-weight: lighter;
+    padding: 5px 10px 5px 10px;
+    background-color: #000bff;
+    color: white;
+    outline: none;
+    box-shadow: 5px 5px 5px #8e8c8c;
+    }
+    button:hover {
+    background-color: #9999FF;
+    }
+    .LoginButton{
+
+    }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>
     function login() {
@@ -41,17 +64,18 @@
 
 
   </script>
+  <title>Trello 2.0</title>
 </head>
 <body>
 
 <h3>Login to Trello 2.0!</h3>
 
 Enter your Username:
-<input type="text" id="username"/>
+<input type="text" id="username" />
 <br />
-Enter the password!
-<input type="password" id="password"/>
-<button onclick="login()">Login</button>
+Enter your Password:
+<input type="password" id="password" style="margin-left: 5px"/>
+<button onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
 
 </body>
 </html>
