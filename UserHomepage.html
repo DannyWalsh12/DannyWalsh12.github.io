@@ -176,7 +176,7 @@
                 success: function(data) {
                     var $response = JSON.parse(data);
 
-                    document.getElementById("title").innerHTML=$response.name;
+                    document.getElementById("title").innerHTML="Welcome" + $response.name;
 
                 }
             });
