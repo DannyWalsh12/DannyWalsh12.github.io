@@ -203,7 +203,6 @@
 
 
         }
-
         function createTask() {
 
             var taskData ={
@@ -399,10 +398,10 @@
 
     </script>
     <meta charset="UTF-8">
-    <title onload="getUsername()" id="title"></title>
+    <title id="title"></title>
 </head>
 
-<body onload="getList()">
+<body onload="getList(); getUsername()">
 <button onclick="ShowCreateList()" class="ListButton">Create new List</button>
 <button onclick="LogOut()" class="LogOutButton">Logout</button>
 
