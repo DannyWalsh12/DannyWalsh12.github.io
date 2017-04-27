@@ -20,6 +20,12 @@
             left: 10px;
             z-index: 1;
         }
+        .CreateListButton{
+            float: none;
+            position: relative;
+            left: 10px;
+            z-index: 1;
+        }
         .LogOutButton{
             float: right;
             position: fixed;
@@ -27,6 +33,7 @@
             z-index: 1;
         }
         .CreateButton {
+            font-size: 12pt;
             float: right;
         }
         .Single_List{
@@ -42,7 +49,7 @@
 
         }
         .deleteButton{
-            font-size: 14pt;
+            font-size: 12pt;
             background-color: red;
         }
 
@@ -402,6 +409,7 @@
 </head>
 
 <body onload="getList(); getUsername()">
+<!--Where do i put the delete list button? -->
 <button onclick="ShowCreateList()" class="ListButton">Create new List</button>
 <button onclick="LogOut()" class="LogOutButton">Logout</button>
 
@@ -420,7 +428,7 @@
         <div class="List-Modal-content">
             <span id="ListClose" class="close">&times;</span>
             <input type="text" id="ListTitle" placeholder="Enter List title"/>
-            <button type="submit" onclick="CreateList()" class="ListButton">Create</button>
+            <button type="submit" onclick="CreateList()" class="CreateListButton">Create</button>
         </div>
     </div>
 
@@ -442,7 +450,7 @@
         var ModalSpan = document.getElementsByClassName("close")[0];
 
         var ListModal = document.getElementById("ListModal");
-        var ListSpan = document.getElementsByClassName("close")[0];
+        var ListSpan = document.getElementsByClassName("close")[1];
 
         ModalSpan.onclick=function () {
             document.getElementById("taskTitle").value="";
