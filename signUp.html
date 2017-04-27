@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 16pt;
+        }
+        button {
+            border-radius: 10px;
+            border: solid 0px #000000;
+            font-size: 18pt;
+            font-weight: lighter;
+            padding: 5px 10px 5px 10px;
+            background-color: #000bff;
+            color: white;
+            outline: none;
+            box-shadow: 5px 5px 5px #8e8c8c;
+            margin-left: 110px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #9999FF;
+        }
+        input{
+            margin-left:12px;
+            font-size: 12pt;
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         function createUser() {
@@ -46,19 +72,27 @@
 </head>
 <body>
     <h3>Create an Account:</h3>
-    Username:
-    <input type="text" id="createUsername"/>
+
+    Your Username:
+    <br/>
+    <input type="text" id="createUsername" />
     <br />
-    Password:
+
+    Your Password:
+    <br />
     <input type="password" id="createPassword" />
     <br />
-    Email:
+
+    Your Email:
+    <br />
     <input type="text" id="createEmail" />
     <br />
-    Verification Code:
-    <input type="text" id="createVerification" />
-    <button onclick="createUser()">Create User</button>
 
+    Verification Code:
+    <br />
+    <input type="text" id="createVerification" />
+    <br />
+    <button onclick="createUser()">Create User</button>
     <br />
     <div id="CreateUserResponse">
     </div>
