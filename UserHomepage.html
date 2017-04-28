@@ -35,6 +35,7 @@
         .CreateButton {
             font-size: 12pt;
             float: right;
+            margin-right: 60px;
         }
         .Single_List{
             border: solid 1px #9999FF;
@@ -318,7 +319,7 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data) {
-                    console.log("Recieved Response: "+data);
+                    //console.log("Recieved Response: "+data);
 
                     var response =JSON.parse(data);
 
@@ -363,6 +364,10 @@
                         //attach the created text to the created div element
                         newDiv.appendChild(newContent);
 
+                        var DeleteButton = document.createElement("span");
+                        DeleteButton.innerHTML = '<button id="DeleteList' + response[i].Id +'" class="deleteButton" onclick="DeleteList(' + response[i].Id +')">Delete List</button>';
+                        newDiv.appendChild(DeleteButton);
+
                         document.getElementById("List").appendChild(newDiv);
 
                         getTasks(response[i].Id);
@@ -371,6 +376,8 @@
                         ButtonSpan.innerHTML= '<button id="CreateTask' + response[i].Id +'" class="CreateButton" onclick="showModal(' + response[i].Id +')">Create a Task</button>';
 
                         document.getElementById("Id"+response[i].Id).appendChild(ButtonSpan);
+
+
 
                     }
                 }
@@ -392,7 +399,7 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data) {
-                    console.log("Received response: " + data);
+                    //console.log("Received response: " + data);
                     document.getElementById("ListTitle").value="";
                     ListModal.style.display="none";
                     getList();
@@ -401,6 +408,30 @@
 
                 });
 
+        }
+        function DeleteList($listId) {
+            var information = {
+                "servicePath" : "/task/DeleteList",
+                "serviceRequest" : JSON.stringify({
+                    "listId" : $listId
+                })
+            };
+
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, testStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+                    //console.log("Received response: " + data);
+
+                    getList();
+                }
+
+
+            });
         }
 
 

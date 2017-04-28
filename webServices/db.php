@@ -191,99 +191,27 @@ class db {
 
 
     }
-
-    function searchNote($noteContentLike){
+    function DeleteList($listId){
         $db = $this->getDbConnection();
 
-        $sqlStatement = $db->prepare("SELECT noteId, noteTitle, noteContents FROM tblNotes WHERE noteContents LIKE ? ");
+        $QueryTaskId = "DELETE FROM `tblTasks` WHERE `listId` = ?";
+        $SqlTaskId = $db->prepare($QueryTaskId);
+        $SqlTaskId->bind_param("i", $listId);
 
-        $noteContentLike = "%".$noteContentLike."%";
-        $sqlStatement->bind_param("s", $noteContentLike);
-
-        $Result = array();
-
-
-
-        if($sqlStatement->execute() === FALSE){
-            echo "Issue executing SQL" . $sqlStatement->error();
+        if($SqlTaskId->execute() === FALSE){
+            echo $SqlTaskId->error;
             return false;
         }
 
-        $sqlStatement->bind_result($noteId, $noteTitle, $noteContents);
+        $QueryListId = "DELETE FROM `tblLists` WHERE `listId` =?";
+        $SqlListId = $db->prepare($QueryListId);
+        $SqlListId->bind_param("i",$listId);
 
-        while($sqlStatement->fetch()) {
-            $note["noteId"] = $noteId;
-            $note["noteTitle"] = $noteTitle;
-            $note["noteContents"] = $noteContents;
-
-            array_push($Result, $note);
-        }
-
-        return $Result;
-
-
-
-    }
-    function updateNote($noteId, $noteTitle, $noteContents) {
-        $db = $this->getDbConnection();
-
-        // Step 1 - Prepare a statement
-        $sqlStatement = $db->prepare("UPDATE tblNotes SET noteTitle = ?, noteContents = ? WHERE noteId = ?");
-
-        // Step 2 - Bind parameters
-        $sqlStatement->bind_param("ssi", $noteTitle, $noteContents, $noteId);
-
-        // Step 3 - Execute
-        if ($sqlStatement->execute() === FALSE) {
-            echo "Issue executing SQL" . $sqlStatement->error();
+        if($SqlListId->execute() === FALSE){
+            echo $SqlListId->error;
             return false;
         }
+
         return true;
-    }
-    function deleteNote($noteId) {
-        $db = $this->getDbConnection();
-
-        // Step 1 - Prepare a statement
-        $sqlStatement = $db->prepare("DELETE FROM tblNotes where noteId = ?");
-
-        // Step 2 - Bind parameters
-        $sqlStatement->bind_param("i", $noteId);
-
-        // Step 3 - Execute
-        if ($sqlStatement->execute() === FALSE) {
-            echo "Issue executing SQL" . $sqlStatement->error();
-            return false;
-        }
-        return true;
-    }
-    function getNotes($userId,$listId) {
-        $db = $this->getDbConnection();
-
-        // Step 1 - Prepare a statement
-        $sqlStatement = $db->prepare("SELECT noteId, noteTitle, noteContents FROM tblNotes WHERE userId = ? and listId = ?");
-
-        // Step 2 - Bind parameters
-        $sqlStatement->bind_param("ii", $userId, $listId);
-
-        $noteResults = array();
-
-        // Step 3 - Execute step
-        if ($sqlStatement->execute() === FALSE) {
-            echo $sqlStatement->error;
-        }
-        // Step 4 - Bind results
-        $sqlStatement->bind_result($noteId, $noteTitle, $noteContents);
-
-        // Step 5 - Go through each row
-        while($sqlStatement->fetch()) {
-            $note["noteId"] = $noteId;
-            $note["noteTitle"] = $noteTitle;
-            $note["noteContents"] = $noteContents;
-
-            array_push($noteResults, $note);
-        }
-
-        return $noteResults;
-
     }
 }

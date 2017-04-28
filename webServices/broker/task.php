@@ -75,4 +75,14 @@ class taskBroker{
         }
         return $response["session"] = "Not a valid session Id";
     }
+
+    function DeleteList($request){
+        $db = new db();
+        $session = new session();
+
+        if($session->isSessionValid()){
+            return $db->DeleteList($request->listId);
+        }
+        return "Not a valid session Id";
+    }
 }
