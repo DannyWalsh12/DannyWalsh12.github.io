@@ -387,7 +387,7 @@
         }
         function DeleteList($listId) {
             var temp = document.getElementById("Id"+$listId).textContent;
-            var r = confirm("Are you sure you want to delete \n\""+temp+"\"");
+            var r = confirm("Are you sure you want to delete \n\""+temp[0]+"\"");
 
             if(r == true) {
                 var information = {
