@@ -35,7 +35,7 @@
         .CreateButton {
             font-size: 12pt;
             float: right;
-            margin-right: 60px;
+            margin-right: 20px;
         }
         .Single_List{
             border: solid 1px #9999FF;
@@ -304,28 +304,32 @@
 
         }
         function DeleteTask($taskId) {
-            var information = {
-                "servicePath": "/task/DeleteTasks",
-                "serviceRequest": JSON.stringify({
-                    "taskId": $taskId// TODO: Find what listId is being used and use it instead
+            var temp = document.getElementById("taskId"+$taskId).childNodes;
+            var r = confirm("Are you sure you want to delete \""+temp[3].innerHTML+"\"");
+            if(r == true) {
+                var information = {
+                    "servicePath": "/task/DeleteTasks",
+                    "serviceRequest": JSON.stringify({
+                        "taskId": $taskId// TODO: Find what listId is being used and use it instead
+                    })
+                };
+
+                $.ajax({
+                    url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                    type: 'post',
+                    data: information,
+                    error: function (XMLHttpRequest, testStatus, errorThrown) {
+                        console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                    },
+                    success: function (data) {
+                        //console.log("Recieved Response: "+data);
+
+                        var response = JSON.parse(data);
+
+                    }
+
                 })
-            };
-
-            $.ajax({
-                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
-                type: 'post',
-                data: information,
-                error: function(XMLHttpRequest, testStatus, errorThrown){
-                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
-                },
-                success: function(data) {
-                    //console.log("Recieved Response: "+data);
-
-                    var response =JSON.parse(data);
-
-                }
-
-            })
+            }
 
         }
         function getList(){
@@ -410,6 +414,7 @@
 
         }
         function DeleteList($listId) {
+
             var information = {
                 "servicePath" : "/task/DeleteList",
                 "serviceRequest" : JSON.stringify({
@@ -446,7 +451,6 @@
 </head>
 
 <body onload="getList(); getUsername()">
-<!--Where do i put the delete list button? -->
 <button onclick="ShowCreateList()" class="ListButton">Create new List</button>
 <button onclick="LogOut()" class="LogOutButton">Logout</button>
 
