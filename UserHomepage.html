@@ -50,7 +50,7 @@
 
         }
         .deleteButton{
-            font-size: 12pt;
+            font-size: 10pt;
             background-color: red;
         }
 
@@ -305,7 +305,7 @@
         }
         function DeleteTask($taskId) {
             var temp = document.getElementById("taskId"+$taskId).childNodes;
-            var r = confirm("Are you sure you want to delete \""+temp[3].innerHTML+"\"");
+            var r = confirm("Are you sure you want to delete \n\""+temp[3].innerHTML+"\"");
             if(r == true) {
                 var information = {
                     "servicePath": "/task/DeleteTasks",
@@ -332,6 +332,7 @@
             }
 
         }
+
         function getList(){
             var information = {
                 "servicePath" : "/task/getList",
@@ -414,36 +415,40 @@
 
         }
         function DeleteList($listId) {
+            var temp = document.getElementById("Id"+$listId).childNodes;
+            var r = confirm("Are you sure you want to delete \n\""+temp[2].innerHTML+"\"");
 
-            var information = {
-                "servicePath" : "/task/DeleteList",
-                "serviceRequest" : JSON.stringify({
-                    "listId" : $listId
-                })
-            };
+            if(r == true) {
+                var information = {
+                    "servicePath": "/task/DeleteList",
+                    "serviceRequest": JSON.stringify({
+                        "listId": $listId
+                    })
+                };
 
-            $.ajax({
-                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
-                type: 'post',
-                data: information,
-                error: function(XMLHttpRequest, testStatus, errorThrown){
-                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
-                },
-                success: function(data) {
-                    //console.log("Received response: " + data);
+                $.ajax({
+                    url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                    type: 'post',
+                    data: information,
+                    error: function (XMLHttpRequest, testStatus, errorThrown) {
+                        console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                    },
+                    success: function (data) {
+                        //console.log("Received response: " + data);
 
-                    getList();
-                }
+                        getList();
+                    }
 
 
-            });
+                });
+            }
         }
 
 
 
 
-// TODO: Align the div "AllTasks" to work with multiple divs holding multiple tasks
-// TODO: Pretty it up
+// TODO: Create a move option which prompts for which list to move the task to.
+
 
     </script>
     <meta charset="UTF-8">
