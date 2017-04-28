@@ -336,9 +336,12 @@
                         newDiv.setAttribute("id","Id" + response[i].Id);
 
                         //creates text to put inside the newly created div element
+                        var contentTitle = document.createElement("div");
+                        contentTitle.setAttribute("id","TitleId" + response[i].Id);
                         var newContent = document.createTextNode(response[i].Title); // TODO: have this always at the top of the scroll box along with the CreateTask button
                         //attach the created text to the created div element
-                        newDiv.appendChild(newContent);
+                        contentTitle.appendChild(newContent);
+                        newDiv.appendChild(contentTitle);
 
                         var DeleteButton = document.createElement("span");
                         DeleteButton.innerHTML = '<button id="DeleteList' + response[i].Id +'" class="deleteButton" onclick="DeleteList(' + response[i].Id +')">Delete List</button>';
@@ -386,7 +389,7 @@
 
         }
         function DeleteList($listId) {
-            var temp = document.getElementById("Id"+$listId).textContent;
+            var temp = document.getElementById("TitleId"+$listId).innerText;
             var r = confirm("Are you sure you want to delete \n\""+temp+"\"");
 
             if(r == true) {
