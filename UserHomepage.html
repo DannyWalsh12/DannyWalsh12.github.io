@@ -151,7 +151,10 @@
             font-size: 28px;
             font-weight: bold;
         }
+        .List_Title{
+            display: inline-flex;
 
+        }
         .close:hover,
         .close:focus {
             color: #000;
@@ -338,6 +341,7 @@
                         //creates text to put inside the newly created div element
                         var contentTitle = document.createElement("div");
                         contentTitle.setAttribute("id","TitleId" + response[i].Id);
+                        contentTitle.setAttribute("Class", "List_Title")
                         var newContent = document.createTextNode(response[i].Title); // TODO: have this always at the top of the scroll box along with the CreateTask button
                         //attach the created text to the created div element
                         contentTitle.appendChild(newContent);
