@@ -49,7 +49,6 @@ class db {
         else{
             return false;
         }
-
     }
 
     function getUser($userId){
@@ -67,11 +66,6 @@ class db {
         $sqlStatement->fetch();
 
         return $Name;
-
-
-
-
-
     }
 
     function createUserAccount($username,$password,$email,$verificationCode){
@@ -89,7 +83,6 @@ class db {
         }
 
         return true;
-
     }
 
     function createTask($taskTitle,$taskDescription,$userId,$listId){
@@ -133,8 +126,6 @@ class db {
         }
 
         return $results;
-
-
     }
     function DeleteTask($taskId){
         $db= $this->getDbConnection();
@@ -188,8 +179,6 @@ class db {
         }
 
         return $results;
-
-
     }
     function DeleteList($listId){
         $db = $this->getDbConnection();
