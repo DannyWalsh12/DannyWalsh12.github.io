@@ -287,15 +287,21 @@
                         TaskTemplateTitle.innerHTML = response[i].TaskTitle;
 
                         var TaskTemplateButton = TaskTemplate.querySelector("#TaskTemplateButton");
-
                         (function (i) {
                             TaskTemplateButton.addEventListener("click",function () {
                                 DeleteTask(response[i].taskId)
                                 getList();
 
                             });
+                        }(i));
 
-                        }(i)); // TODO: remove this button to add a different way to delete tasks
+                        var TaskTemplateEdit = TaskTemplate.querySelector("#TaskTemplateEditButton");
+                        (function (i){
+                            TaskTemplateEdit.addEventListener("click",function () {
+                                EditTasks(response[i].taskId)
+                                getList();
+                            });
+                        }(i));
 
                         TaskTemplate.style.display = "block";
 
@@ -450,6 +456,26 @@
             }
 
         }
+        function EditTasks($taskId) {
+            var information = {
+                "servicePath": "/task/EditTasks",
+                "serviceRequest": JSON.stringify({
+                    "taskId": $taskId
+                })
+            };
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, textStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data) {
+
+                }
+            });
+
+        }
 
 
 
@@ -496,6 +522,7 @@
         <div id="TaskTemplateText" class="noteText">
             Some note text
         </div>
+        <button id="TaskTemplateEditButton" class="editButton">edit</button>
     </div>
 
     <script>
@@ -508,6 +535,8 @@
         ModalSpan.onclick=function () {
             document.getElementById("taskTitle").value="";
             document.getElementById("taskDescrip").value="";
+            document.getElementById("taskDescrip").setAttribute("rows", "4");
+            document.getElementById("taskDescrip").setAttribute("cols", "35");
             modal.style.display="none";
         }
         ListSpan.onclick=function () {

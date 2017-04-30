@@ -66,6 +66,14 @@ class taskBroker{
         return $response["session"] = "not a valid session Id";
 
     }
+    function EditTasks($request){
+        $db = new db();
+        $session = new session();
+
+        if($session->isSessionValid()){
+            return $db->EditTasks($request->taskId);
+        }
+    }
     function MobileGetList($request){
         $db = new db();
 
