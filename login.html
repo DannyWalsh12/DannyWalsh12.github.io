@@ -23,13 +23,17 @@
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>
-      document.getElementById("password")
-          .addEventListener("keyup", function(event) {
-              event.preventDefault();
-              if (event.keyCode == 13) {
-                  document.getElementById("Login").click();
-              }
-          });
+      function searchKeyPress(e)
+      {
+          // look for window.event in case event isn't passed in
+          e = e || window.event;
+          if (e.keyCode == 13)
+          {
+              document.getElementById('Login').click();
+              return false;
+          }
+          return true;
+      }
 
     function login() {
       var postData = {
@@ -74,8 +78,8 @@ Enter your Username:
 <input type="text" id="username" style="font-size: 12pt"/>
 <br />
 Enter your Password:
-<input type="password" id="password" style="margin-left: 5px; font-size: 12pt"/>
-<button id="Login" onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
+<input type="password" id="password" style="margin-left: 5px; font-size: 12pt" onkeypress="return searchKeyPress(event)"/>
+<button type="submit" id="Login" onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
 
 </body>
 </html>
