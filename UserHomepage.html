@@ -535,8 +535,8 @@
         ModalSpan.onclick=function () {
             document.getElementById("taskTitle").value="";
             document.getElementById("taskDescrip").value="";
-            document.getElementById("taskDescrip").setAttribute("rows", "4");
-            document.getElementById("taskDescrip").setAttribute("cols", "35");
+            document.getElementById("taskDescrip").cols=35;
+            document.getElementById("taskDescrip").rows=4;
             modal.style.display="none";
         }
         ListSpan.onclick=function () {
