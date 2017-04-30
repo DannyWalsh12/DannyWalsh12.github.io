@@ -77,12 +77,11 @@ class taskBroker{
     }
     function MobileGetTasks($request){
         $db = new db();
-        $session = new session();
 
-        if($session->isSessionValid()){
-            return $db->getTasks($request->userId,$request->listId);
-
+        if($request->userId > 0) {
+            return $db->getTasks($request->userId, $request->listId);
         }
+
         return $response["session"] = "not a valid session Id";
 
     }
