@@ -23,7 +23,14 @@
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>
-    var count=0;
+      document.getElementById("password")
+          .addEventListener("keyup", function(event) {
+              event.preventDefault();
+              if (event.keyCode == 13) {
+                  document.getElementById("Login").click();
+              }
+          });
+
     function login() {
       var postData = {
         "servicePath" : "/security/authenticate",
@@ -49,10 +56,6 @@
           else{
               alert("Invalid username or password\nPlease try again");
               document.getElementById("password").value="";
-              count++;
-              if(count > 1){
-                  document.getElementById("ForPass").style.display="inline";
-              }
           }
 
         }
@@ -72,8 +75,7 @@ Enter your Username:
 <br />
 Enter your Password:
 <input type="password" id="password" style="margin-left: 5px; font-size: 12pt"/>
-<button onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
-<button id="ForPass" style="display: none">Forgot password</button>
+<button id="Login" onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
 
 </body>
 </html>
