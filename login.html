@@ -23,6 +23,7 @@
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>
+    var count=0;
     function login() {
       var postData = {
         "servicePath" : "/security/authenticate",
@@ -48,6 +49,10 @@
           else{
               alert("Invalid username or password\nPlease try again");
               document.getElementById("password").value="";
+              count++;
+              if(count > 1){
+                  document.getElementById("ForPass").style.display="inline";
+              }
           }
 
         }
@@ -68,6 +73,7 @@ Enter your Username:
 Enter your Password:
 <input type="password" id="password" style="margin-left: 5px; font-size: 12pt"/>
 <button onclick="login()" class="LoginButton" style="margin-left: 20px">Login</button>
+<button id="ForPass" style="display: none">Forgot password</button>
 
 </body>
 </html>
