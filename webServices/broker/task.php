@@ -78,7 +78,7 @@ class taskBroker{
     function MobileGetTasks($request){
         $db = new db();
 
-        if($request->userId > 0) {
+        if($request->userId) {
             return $db->getTasks($request->userId, $request->listId);
         }
 
