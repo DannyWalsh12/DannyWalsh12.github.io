@@ -85,6 +85,19 @@ class taskBroker{
         return $response["session"] = "not a valid session Id";
 
     }
+    function MobileCreateTasks($request){
+        $db = new db();
+
+        if ($db->createTask($request->taskTitle, $request->taskDescrip, $request->userId, $request->listId)) {
+            $response["TaskResponse"] = "The task has been created";
+        }
+        else {
+            $response["TaskResponse"] = "Failed to create task";
+        }
+
+        return $response;
+
+    }
     function DeleteTasks($request){
         $db = new db();
         $session = new session();
