@@ -2,10 +2,7 @@
 //session_start();
 
 /**
- * Created by PhpStorm.
- * User: Danny
- * Date: 2/3/2017
- * Time: 10:38 AM
+ * this parses the path for making a request as well as json decoding the serviceRequest
  */
 require_once ("session.php");
 

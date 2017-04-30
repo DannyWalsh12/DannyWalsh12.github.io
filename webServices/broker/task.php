@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Dan Delciappo
- * Date: 2/13/2017
- * Time: 6:39 PM
+ * this is the piece that talks to the db layer for everything
+ * that has to do with tasks or lists.
+ * each function makes sure that the user has a valid session and are logged in before
  */
 require_once ("db.php");
 require_once ("session.php");

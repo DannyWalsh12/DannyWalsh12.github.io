@@ -1,4 +1,7 @@
 <?php
+/*
+ * I do not think this is used in my program.
+ */
 
 require_once("lib/session.php");
 

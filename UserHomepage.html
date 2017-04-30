@@ -1,17 +1,33 @@
 <!DOCTYPE html>
+<!--
+ This file is the heart of Trello 2.0
+
+ It is used to display Lists and Tasks created by the user.
+ They are able to also Delete tasks or Delete Lists if they so choose
+ The display is very simplistic and scroll from right to left.
+ if one List container is filled, a scroll bar will appear for seeing the rest of the tasks
+
+ -->
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
+    /*
+    This is where all the styling is taken place.
+    Very straight forward approach to how it is designed.
+    Probably could use different colors in the future, but
+    for now it gets the job done
+    */
+
         body {
-            font-family: Arial;
+            font-family: Arial,sans-serif;
             font-size: 16pt;
         }
         .All_List{
             height: 800px;
             padding-top: 50px;
             position: relative;
-            bottom: 0px;
+            bottom: 0;
 
         }
         .ListButton{
@@ -38,7 +54,7 @@
             margin-right: 20px;
         }
         .Single_List{
-            border: solid 1px #9999FF;
+            border: solid 1px #299fff;
             flex: 1 auto;
             border-radius: 5px;
             padding: 5px;
@@ -53,12 +69,12 @@
             font-size: 10pt;
             background-color: red;
         }
-        .editButton{
+        /*.editButton{
             font-size: 10pt;
-            background-color: #069925;
-        }
+            background-color: #299fff;
+            float: left;
+        }*/
         .task {
-            padding: 5px;
             flex: 1 auto;
             min-width: 350px;
             margin: 30px;
@@ -71,7 +87,7 @@
 
         button {
             border-radius: 10px;
-            border: solid 0px #000000;
+            border: solid 0 #000000;
             font-size: 18pt;
             font-weight: lighter;
             padding: 5px 10px 5px 10px;
@@ -99,6 +115,7 @@
             padding:5px;
             color:#DDDDDD;
             border-radius:5px;
+            max-height: inherit;
         }
         .noteText {
             font-size:12pt;
@@ -156,7 +173,6 @@
         }
         .List_Title{
             display: inline-flex;
-
         }
         .close:hover,
         .close:focus {
@@ -172,15 +188,14 @@
     </style>
     <script>
         var list;
-
-        function showModal($listId) {
-            list=$listId;
+        function showModal($listId) {    //This is a dialog box that appears when create task button is pressed
+            list=$listId;                //It keeps track of which list the button was pressed in store in a global variable
             modal.style.display="block";
         }
-        function ShowCreateList() {
+        function ShowCreateList() { // Similar to showModal, but this just displays the modal for when a user click Create List button
             ListModal.style.display="block";
         }
-        function getUsername(){
+        function getUsername(){ //Used to get the username of the logged in user to welcome them
             var information = {
                 "servicePath": "/security/getUser",
                 "serviceRequest": JSON.stringify({
@@ -194,15 +209,15 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data) {
-                    var $response = JSON.parse(data);
+                    var response = JSON.parse(data);
 
-                    document.getElementById("title").innerHTML="Welcome " + $response.name;
+                    document.getElementById("title").innerHTML="Welcome " + response.name;
 
                 }
             });
 
         }
-        function LogOut(){
+        function LogOut(){ //Self explanatory, logouts the user and then redirects them to the login page
             var information = {
                 "servicePath": "/security/LogOut",
                 "serviceRequest": JSON.stringify({
@@ -223,14 +238,13 @@
 
 
         }
-        function createTask() {
-
-            var taskData ={
+        function createTask() { //This grabs the information from the modal box and creates the task
+            var taskData ={     //With the corresponding Title and Description.
                 "servicePath" : "/task/createTasks",
                 "serviceRequest" : JSON.stringify({
                     "taskTitle" : document.getElementById("taskTitle").value,
                     "taskDescrip" : document.getElementById("taskDescrip").value,
-                    "listId" : list // TODO: Find what listId is being used and use it instead
+                    "listId" : list
                 })
             };
 
@@ -246,10 +260,10 @@
                     //console.log("Received response: " + data);
 
                     // Parse data into response object
-                    var response = JSON.parse(data);
+                    //var response = JSON.parse(data);
 
                     // Set auth status
-                    //alert(response.TaskResponse); //TODO: alert for now, will make to confirmation box if time permits
+                    //alert(response.TaskResponse);
                     document.getElementById("taskTitle").value="";
                     document.getElementById("taskDescrip").value="";
                     modal.style.display="none";
@@ -259,64 +273,7 @@
             });
 
         }
-        function getTasks($ListId) {
-            var information = {
-                "servicePath": "/task/getTasks",
-                "serviceRequest": JSON.stringify({
-                    "listId": $ListId // TODO: Find what listId is being used and use it instead
-                })
-            };
-
-            $.ajax({
-                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
-                type: 'post',
-                data: information,
-                error: function(XMLHttpRequest, testStatus, errorThrown){
-                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
-                },
-                success: function(data){
-                    //console.log("Received response: "+ data);
-
-
-                    var response = JSON.parse(data);
-
-                    for(var i =0; i<response.length;i++){
-                        var TaskTemplate = document.getElementById("TaskTemplate").cloneNode(true);
-
-                        var TaskTemplateText = TaskTemplate.querySelector("#TaskTemplateText");
-                        TaskTemplateText.innerHTML = response[i].taskDescription;
-
-                        var TaskTemplateTitle = TaskTemplate.querySelector("#TaskTemplateTitle");
-                        TaskTemplateTitle.innerHTML = response[i].TaskTitle;
-
-                        var TaskTemplateButton = TaskTemplate.querySelector("#TaskTemplateButton");
-                        (function (i) {
-                            TaskTemplateButton.addEventListener("click",function () {
-                                DeleteTask(response[i].taskId)
-                                getList();
-
-                            });
-                        }(i));
-
-                        var TaskTemplateEdit = TaskTemplate.querySelector("#TaskTemplateEditButton");
-                        (function (i){
-                            TaskTemplateEdit.addEventListener("click",function () {
-                                EditTasks(response[i].taskId)
-                                getList();
-                            });
-                        }(i));
-
-                        TaskTemplate.style.display = "block";
-
-                        TaskTemplate.setAttribute("id", "taskId" + response[i].taskId);
-                        document.getElementById("Id"+$ListId).appendChild(TaskTemplate);
-                    }
-                }
-            })
-
-        }
-
-        function getList(){
+        function getList(){     //This is used to display the Lists created by the user.
             var information = {
                 "servicePath" : "/task/getList",
                 "serviceRequest" : JSON.stringify({
@@ -350,7 +307,7 @@
                         //creates text to put inside the newly created div element
                         var contentTitle = document.createElement("div");
                         contentTitle.setAttribute("id","TitleId" + response[i].Id);
-                        contentTitle.setAttribute("Class", "List_Title")
+                        contentTitle.setAttribute("Class", "List_Title");
                         var newContent = document.createTextNode(response[i].Title); // TODO: have this always at the top of the scroll box along with the CreateTask button
                         //attach the created text to the created div element
                         contentTitle.appendChild(newContent);
@@ -375,8 +332,64 @@
                 }
             })
         }
-        function CreateList() {
-            var information = {
+        function getTasks($ListId) { //It gets the ListId from the getlist function to the populate the List
+            var information = {      //With its tasks that follow inside it
+                "servicePath": "/task/getTasks",
+                "serviceRequest": JSON.stringify({
+                    "listId": $ListId
+                })
+            };
+
+            $.ajax({
+                url: "http://astralqueen.bw.edu/~dwalsh12/testProject/trello-2.0/webServices/services.php",
+                type: 'post',
+                data: information,
+                error: function(XMLHttpRequest, testStatus, errorThrown){
+                    console.log("Error occurred, please try again!" + XMLHttpRequest.status);
+                },
+                success: function(data){
+                    //console.log("Received response: "+ data);
+
+
+                    var response = JSON.parse(data);
+
+                    for(var i =0; i<response.length;i++){
+                        var TaskTemplate = document.getElementById("TaskTemplate").cloneNode(true);
+
+                        var TaskTemplateText = TaskTemplate.querySelector("#TaskTemplateText");
+                        TaskTemplateText.innerHTML = response[i].taskDescription;
+
+                        var TaskTemplateTitle = TaskTemplate.querySelector("#TaskTemplateTitle");
+                        TaskTemplateTitle.innerHTML = response[i].TaskTitle;
+
+                        var TaskTemplateButton = TaskTemplate.querySelector("#TaskTemplateButton");
+                        (function (i) {
+                            TaskTemplateButton.addEventListener("click",function () {
+                                DeleteTask(response[i].taskId);
+                                getList();
+
+                            });
+                        }(i));
+                        /*var TaskTemplateEdit = TaskTemplate.querySelector("#TaskTemplateEditButton");
+                         (function (i) {
+                         TaskTemplateEdit.addEventListener("click",function () {
+                         EditTasks(response[i].taskId)
+                         getList();
+
+                         });
+                         }(i));*/
+
+                        TaskTemplate.style.display = "block";
+
+                        TaskTemplate.setAttribute("id", "taskId" + response[i].taskId);
+                        document.getElementById("Id"+$ListId).appendChild(TaskTemplate);
+                    }
+                }
+            })
+
+        }
+        function CreateList() { //Gets info from the ListModal and then creates the List in the database
+            var information = { //Then displays the information on the screen once it has done so.
                 "servicePath" : "/task/createList",
                 "serviceRequest" : JSON.stringify({
                     "ListTitle" : document.getElementById("ListTitle").value
@@ -401,7 +414,7 @@
                 });
 
         }
-        function DeleteList($listId) {
+        function DeleteList($listId) {  //it prompts the user to make sure they want to delete the list, and once deleted refreshes the display
             var temp = document.getElementById("TitleId"+$listId).innerText;
             var r = confirm("Are you sure you want to delete \n\""+temp+"\"");
 
@@ -430,14 +443,14 @@
                 });
             }
         }
-        function DeleteTask($taskId) {
+        function DeleteTask($taskId) { //Prompts the user if they want to delete the task, if so, it deletes the task and refereshes the display
             var temp = document.getElementById("taskId"+$taskId).childNodes;
             var r = confirm("Are you sure you want to delete \n\""+temp[3].innerHTML+"\"");
             if(r == true) {
                 var information = {
                     "servicePath": "/task/DeleteTasks",
                     "serviceRequest": JSON.stringify({
-                        "taskId": $taskId// TODO: Find what listId is being used and use it instead
+                        "taskId": $taskId
                     })
                 };
 
@@ -449,9 +462,9 @@
                         console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                     },
                     success: function (data) {
-                        //console.log("Recieved Response: "+data);
+                        //console.log("Received Response: "+data);
 
-                        var response = JSON.parse(data);
+                        //var response = JSON.parse(data);
 
                     }
 
@@ -459,11 +472,10 @@
             }
 
         }
-        function EditTasks($taskId) {
+       /* function EditTasks($taskId){
             var information = {
-                "servicePath": "/task/EditTasks",
+                "servicePath": "/security/getUser",
                 "serviceRequest": JSON.stringify({
-                    "taskId": $taskId
                 })
             };
             $.ajax({
@@ -474,12 +486,13 @@
                     console.log("Error occurred, please try again!" + XMLHttpRequest.status);
                 },
                 success: function(data) {
+                    var $response = JSON.parse(data);
 
                 }
             });
 
-        }
-
+        }*/
+//TODO: Implement an edit option for ability to edit tasks
 
 
 
@@ -497,16 +510,16 @@
 
     <div id="List" class="All_List" style="display: none">
     </div>
-    <div id="MyModal" class="Modal">
+    <div id="MyModal" class="Modal"> <!--Allows for user to input details about the task being created default hidden -->
         <div class="Modal-content">
             <span id="ModalClose" class="close">&times;</span>
             <input type="text" id="taskTitle" placeholder="Enter task title" style="font-size: 12pt; width: 300px"/>
-            <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description" style="font-size: 12pt; margin: 0px; height: 80px; width: 350px;"></textarea>
+            <textarea rows="4" cols="35" id="taskDescrip" placeholder="Task Description" style="font-size: 12pt; margin: 0; height: 80px; width: 350px;"></textarea>
             <button type="submit" id="sumbitButton" onclick="createTask()" class="SubBtn">Create</button>
         </div>
     </div>
 
-    <div id="ListModal" class="ListModal">
+    <div id="ListModal" class="ListModal"> <!--Allows for user to input details about the task being created default hidden -->
         <div class="List-Modal-content">
             <span id="ListClose" class="close">&times;</span>
             <input type="text" id="ListTitle" placeholder="Enter List title"/>
@@ -519,13 +532,13 @@
 
 
 
-    <div id="TaskTemplate" class="task" style="display:none">
+    <div id="TaskTemplate" class="task" style="display:none"> <!--This is a template for building a Task dynamically -->
         <button id="TaskTemplateButton" class="deleteButton">x</button>
         <div id="TaskTemplateTitle" class="noteTitle">Note Title</div>
         <div id="TaskTemplateText" class="noteText">
             Some note text
         </div>
-        <button id="TaskTemplateEditButton" class="editButton">edit</button>
+       <!-- <button id="TaskTemplateEditButton" class="editButton">edit</button> -->
     </div>
 
     <script>
@@ -535,21 +548,19 @@
         var ListModal = document.getElementById("ListModal");
         var ListSpan = document.getElementsByClassName("close")[1];
 
-        ModalSpan.onclick=function () {
+        ModalSpan.onclick=function () { //used to cancel out of creating a task and resetting the information
             document.getElementById("taskTitle").value="";
             document.getElementById("taskDescrip").value="";
             document.getElementById("taskDescrip").style.height=80;
             document.getElementById("taskDescrip").style.width=350;
             modal.style.display="none";
-        }
-        ListSpan.onclick=function () {
+        };
+
+        ListSpan.onclick=function () { //used to cancel out of creating a task and resetting the information
             document.getElementById("ListTitle").value="";
             ListModal.style.display="none";
         }
     </script>
 </body>
-
-
-
 
 </html>

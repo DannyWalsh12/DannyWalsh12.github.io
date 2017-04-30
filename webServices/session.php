@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: briankrupp
- * Date: 2/28/17
- * Time: 10:54 AM
+ * This is used as a one-stop-shop for all things session handling.
  */
 class session {
   public function startSession() {

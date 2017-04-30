@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: briankrupp
+ * used to talk with the Database
+ * Used to authenticate a user and if successful with start a session for the user.
+ * also is used for creating users and getting the username of currently logged in user
  */
 
 require_once ("db.php");

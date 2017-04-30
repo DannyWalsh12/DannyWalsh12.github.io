@@ -1,10 +1,9 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Danny
- * Date: 2/22/2017
- * Time: 10:31 AM
+ * This is the piece that talks to the database.
+ * This can create, delete, and get tasks and Lists
+ * as well as creating users in the database.
  */
 require_once ("session.php");
 
